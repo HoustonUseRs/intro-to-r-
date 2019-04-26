@@ -1,0 +1,423 @@
+# Interacting with Simple Data
+
+
+## 2.1 Coding in the console
+
+Click in the interactive console.  You'll notice a cursor will start blinking next to the `>` symbol.  This is called the command prompt; the computer is waiting for us to give it a command; it's "prompting" us, and letting us know it's ready.
+
+Given that R was made for statistics, we should expect it to have no problems with numbers and math. Let's try some basics!
+
+```{r}
+1
+1 + 5
+10 + 12
+```
+
+Pressing enter after each line of code runs it, and R will tell us the answer right away.  This lets us interact with R quickly.
+
+R, like other programming languages, can remember information we give it in named variables.  This is called assigning variables with a value.  Let's tell R to remember some information for us.
+
+```{r}
+x <- 1
+y <- 5
+z <- 10
+```
+
+The `<` and `-` can be seen as an arrow pointing to the left.  You can think of this as saying, "assign the value 1 to a variable named x".  If you are familiar with other programming languages, `<-` and `=` can be used interchangeably in R, but the preferred way is to use `<-`.  We can also see all the information we've told R to remember in the environment viewer.
+
+We can ask R what the values of these variables are:
+
+```{r}
+x
+y
+z
+```
+
+We can also use these variables like so:
+
+```{r}
+x + y
+x + z
+z * y
+```
+
+And if we try to ask R about a variable it doesn't know about, R will tell us that it can't find that variable:
+
+```{r error=TRUE}
+a
+```
+
+This is neat and all, but we're here to dig into data, so let's get to it!
+
+
+## Loading in data
+
+We are going to load in CSV files today to get data into R.  R is powerful for statistics because it has a great base collection of functions, or named procedures, for common things we'd want to do with data, like reading in a CSV.  R's base way of doing this is with a function named `read.csv`. Like the named variables, we can get **what** `read.csv` is by referring to its name. For more info on loading data, [see here](https://www.datacamp.com/community/tutorials/importing-data-r-part-two).
+
+```{r}
+read.csv
+```
+
+Here, we get back just what `read.csv` is.  In order to tell R to **do** or **run** the function, we need to run:
+
+```{r error=TRUE}
+read.csv()
+```
+
+To learn more about any function, we can add a `?` in front of the function name like this:
+
+```{r eval=FALSE}
+?read.csv
+```
+
+In order to know what file to read in, we need to give the function the location of the file:
+
+```{r}
+read.csv(file = 'got.csv')
+```
+
+RStudio reminds us what different functions are named as we start typing them into console, and reminds us what additional information each of those functions may need when we type the `(`.  It also automatically completes the function call for us with the `)`.
+
+When we read in the CSV, R printed the data out to us.  In order to really use the data though, we need to tell R to remember the data by assigning it to a variable.  We want to name our variables so that they're easy to remember and indicative of what information they are holding onto.
+
+```{r}
+got <- read.csv(file = 'got.csv')
+```
+
+Now, when we ask R about `got`, we get the data back!
+
+```{r}
+got
+```
+
+There are many other ways to load in data from other file types.  Googling "read xls to R" will give us some great answers on how to read in data as an Excel sheet.  We also have a quick list of standard ways to load other common file types in the appendix.
+
+Let's get a quick sense of what this data is like!
+
+## Glancing at the data
+
+Try this, and let's talk about common data structures in R.
+```{r}
+str(got)
+```
+
+# Data structures
+
+The most important data structures in base R can be organized by their
+dimensionality and whether their contents are of the same type (homogeneous).
+
+| Dimensionality | Homogeneous   | Heterogeneous   |
+| :------------- | :-------------| :---------------|
+| 1d             | Atomic Vector | List            |
+| 2d             | Matrix        | Data frame      |
+| 1d             | Array         |                 |
+
+## Vectors
+The basic data structure in R is the vector and there are 2 type of vectors:
+atomic vectors and lists.
+They have three common properties:
+- Type, `typeof()`, what it is.
+- Length, `length()`, how many elements it contains.
+- Attributes, `attributes()`, additional arbitrary metadata.
+They differ in the types of their elements: all elements of an atomic vector
+ must be the same type, whereas the elements of a list can have different types.
+
+### Atomic vectors:
+There are four common types of atomic vectors: logical, integer, double (often called numeric),
+and character. Atomic vectors are usually created with `c()`, short for combine,
+and they are always flat, even if you nest them.
+```{r}
+c(1, c(2, c(3, 4)))
+```
+
+### Lists:
+Lists are different from atomic vectors because their elements can be of any type,
+including lists (recursive). You construct lists by using `list()` instead of
+`c()`.
+```{r}
+x <- list(1:3, "a", c(TRUE, FALSE, TRUE), c(2.3, 5.9))
+str(x)
+```
+Lists are used to build up many of the more complicated data structures in R, like
+in the case of ***data frames***.
+
+## Attributes
+All objects can have arbitrary additional attributes, used to store metadata about the object.
+ Attributes can be thought of as a named list (with unique names).
+  Attributes can be accessed with `attributes()`.
+The two most important/common ones are:
+- Names, a character vector giving each element a name, described in names.
+- Dimensions, used to turn vectors into matrices and arrays.
+
+## Factors
+One important use of attributes is to define factors.
+A factor is a vector that can contain only predefined values,
+and is used to store categorical data.
+They have two attributes: the class, “factor”, which makes them behave differently from regular vectors,
+and the levels, which defines the set of allowed values.
+```{r}
+x <- factor(c("a", "b", "b", "a"))
+x
+class(x)
+levels(x)
+```
+Unfortunately, most data loading functions in R automatically convert character vectors to factors.
+Instead, use the argument stringsAsFactors = FALSE to suppress this behaviour, and then manually convert character vectors to factors when need it.
+
+```{r}
+got <- read.csv(file = 'got.csv', stringsAsFactors = FALSE)
+```
+### Matrices and arrays
+Adding a dim attribute to an atomic vector allows it to behave like a multi-dimensional array.
+ A special case of the array is the matrix, which has two dimensions.
+`length()` and `names()` have high-dimensional generalisations:
+- length() generalises to `nrow()` and `ncol()` for matrices, and `dim()` for arrays.
+- names() generalises to `rownames()` and `colnames()` for matrices, and `dimnames()`,
+a list of character vectors, for arrays.
+Matrices and arrays are usually created with `matrix()` and `array()`
+
+### Data frames (yes, no need to `import pandas as pd`)
+A data frame is the most common way of storing data in R, and makes data analysis easier.
+A data frame is a list of equal-length vectors. This makes it a 2-dimensional structure,
+ so it shares properties of both the matrix and the list.
+This means that a data frame has names(), colnames() (same thing as names() for DF),
+and rownames().
+ The length() of a data frame is the length of the underlying list and so is the same as ncol();
+  nrow() gives the number of rows.
+
+You create a data frame using `data.frame()`, which takes named vectors as input.
+It defaults strings into factors, so make sure to use `stringsAsFactors = FALSE`.
+```{r}
+df <- data.frame(number = 1:3,
+  letter = c("one", "two", "three"),
+  , stringsAsFactors = FALSE)
+str(df)
+```
+
+Here's a table of some quick functions we can run on the data to learn about it:
+
+| Code           | Description                         |
+| :------------- | :-----------------------------------|
+| `names(got)`   | Column header names                 |
+| `dim(got)`     | Number of rows by number of columns |
+| `nrow(got)`    | Number of rows                      |
+| `ncol(got)`    | Number of columns                   |
+| `View(got)`    | View data in file viewer            |
+| `str(got)`     | Structure of data                   |
+| `summary(got)` | Summary of the data                 |
+
+
+# Power functions for tyding data (not base R)
+As we've mentioned before, R is an open source platform with a great community
+that is constantly working in collaboration to innovate by creating or maintaining
+R packages.
+[R packages](https://www.rstudio.com/products/rpackages/) are collections of
+functions and data sets developed to improved existing R functionality,
+or by adding new ones. The basic information about a package is in the
+`description file`. You can access the description file in the repository
+of the package or using these commands:
+
+```{r}
+packageDescription("package")
+help(package = "package")
+```
+
+`A repository` is a place where packages are located so you can install them from it.
+ Typically they are online and accessible to everyone. The official R repository is
+[CRAN](https://cran.r-project.org/)
+
+
+**We will be using 2 main packages to help us tidy and visualize the data, so it's easy to work with**
+ - `dplyr`: to subset, transform, summarize, etc..
+ - `ggplot2`: for data visualization
+
+Let's try subsetting our got data!
+
+We can look at parts of the data using _verbs_ like `filter()` and `select()`, provided by the `dplyr` package.
+
+```{r error=TRUE}
+select(got, name)
+```
+
+First, we need to install and load the package to our project. If we are not sure about the package name we could try `??select`
+
+```{r eval=FALSE}
+??select
+```
+
+Now we'are sure we need to install dplyr to be able to use select, so let's do that...
+
+```{r results="hide"}
+install.packages('dplyr')
+```
+
+To check what packages are installed on your computer, you can use:
+```{r}
+installed.packages()
+```
+
+Once we installed the package from the repo to our local environment, we use the command `library()`
+to load a package from our computers to the specific project.
+Also, we use `data("package")` to explore the data sets installed with the package.
+
+```{r results="hide"}
+library(dplyr)
+data(package = "dplyr")
+```
+
+Now, we can use all the functionalities of the package. Let's start with looking at just specific column(s), using `select()`:
+
+```{r}
+select(got, name)
+select(got, name, isAlive)
+```
+
+or specific rows matching a certain condition, using `filter()`:
+
+```{r}
+filter(got, popularity > 0.4)
+filter(got, male == 0)
+```
+
+We can pass the output of one of these to another function to calculate the mean.
+
+```{r}
+mean(unlist(select(got, popularity)))
+```
+`unlist` is used to get all the atomic components of the vector selected. Try:
+
+```{r}
+typeof(select(got, popularity))
+typeof(unlist(select(got, popularity)))
+ ```
+Notice how we *nested* one function inside another? There's another way to do this,
+a way that's more readable and easier to reason about. We can use the pipe operator,
+represented by the `%>%` symbol, to achieve the same thing.
+
+```{r}
+got %>% select(popularity) %>% unlist() %>% mean()
+```
+
+You read this left to right, and you can see the steps the data go through in logical order.
+
+
+We can combine `select()` and `filter()` using this approach
+and calculate our own standard deviations, medians, and the max and the min values.
+
+```{r eval = FALSE}
+got %>% select(popularity) %>% unlist() %>% median()
+got %>% select(popularity) %>% unlist() %>% sd()
+got %>% select(popularity) %>% unlist() %>% max()
+got %>% select(popularity) %>% unlist() %>% min()
+got %>% select(title, popularity, contains("is"), male) %>%
+ filter(male==0) %>% arrange(desc(popularity))
+```
+
+It seems to be a correlation between popularity and being alive in GOT... Overall, if you're dead you get more popular?, and men
+are more popular than women? how many women have died?
+```{r}
+got %>% group_by(isAlive, male) %>% summarise(mean= mean(popularity)) %>% arrange(desc(mean))
+got %>% group_by(isAlive, male) %>% summarise(mean= mean(popularity),
+ N= length(popularity)) %>% arrange(desc(mean))
+```
+There's many more calculations we can run on the data, but plotting the data will help us we a better picture of it.
+
+## Visualizing the data
+
+Base R can plot our data, we will use `ggplot2` package in the next section,
+ but we wanted to show you how base R allows you to do simple data visualization too.
+
+Let's consider a quick visualization to see the shape, distribution, and outliers from our data set, a `boxplot`.
+```{r}
+boxplot(got$popularity)
+```
+
+We can see that data above the median is more dispersed. We can also notice
+several outliers at the higher extreme.
+
+We can pass in additional parameters to control the way our plot looks.
+You can read about them in the help section `?boxplot`. Some of the frequently
+used ones are, main-to give the title, xlab and ylab-to provide labels for the axes,
+col to define color etc.
+Additionally, with the argument horizontal = TRUE we can plot it horizontally
+ and with notch = TRUE we can add a notch to the box.
+ ```{r}
+ boxplot(got$popularity,
+ +         main = "Popularity of GOT characters",
+ +         xlab = "0-1",
+ +         ylab = "Popularity",
+ +         col = "orange",
+ +         border = "brown",
+ +         horizontal = TRUE)
+ ```
+
+Let's see who is more popular, men or women...
+```{r}
+# adding more comprehensive names
+got <- got %>% mutate(gender = ifelse(male == 1, "men", "women"))
+boxplot(popularity ~ gender, data=got,
++         main = "Popularity of GOT characters by gender",
++         xlab = "Popularity",
++         ylab = "Gender",
++         col = c("blue", "pink"),
++         horizontal = TRUE)
+```
+
+```{r}
+gotFiltered <- got %>% filter(house %in% c("Lannister", "Stark", "Targaryen"))
+boxplot(popularity ~ house, data=gotFiltered,
++         main = "Popularity of GOT characters by house",
++         xlab = "Popularity",
++         ylab = "House",
++         col = c("blue", "pink", "magenta"))
+```
+Being bad apparently makes you popular...
+
+If you think this is kind of cool, wait to see all you can do using ggplot2,
+ which has become the standard way to plot data in R.
+
+## Working with a simple dataset
+
+So far, we've:
+
+__Loaded in the data from a csv__
+
+```{r eval=FALSE}
+got <- read.csv(file = 'got.csv', stringsAsFactors = FALSE)
+```
+
+__Learned more about the data as a whole__
+
+| Code             | Description                         |
+| :--------------- | :-----------------------------------|
+| `names(got)`     | Column header names                 |
+| `dim(got)`       | Number of rows by number of columns |
+| `nrow(got)`      | Number of rows                      |
+| `ncol(got)`      | Number of columns                   |
+| `str(got)`       | Structure of data                   |
+| `summary(got)`   | Summary of the data                 |
+| `View(got)`      | View data in file viewer            |
+
+__Looked at the data by rows and columns__
+
+| Code                                 | Description                          |
+| :----------------------------------- | :------------------------------------|
+| `filter(got, popularity > 0.4)`      | Rows with popularity greater than 0.4|
+| `select(got, name, isAlive)`         | Name and isAlive columns, got        |
+
+__Calculated descriptive statistics on the data__
+
+| Code                  | Description            |
+| :-------------------- | :----------------------|
+| `mean()`              | Average                |
+| `median()`            | Median                 |
+| `sd()`                | Standard               |
+| `max()`               | Maximum                |
+| `min()`               | Minimum                |
+
+__Visualizing the data using base R__
+
+
+got is a rather well-formed dataset. Let's practice our new skills on a
+slightly more realistic dataset and learn additional skills for
+cleaning the data and making high level visualizations.
