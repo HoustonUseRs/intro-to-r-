@@ -383,7 +383,7 @@ So far, we've:
 __Loaded in the data from a csv__
 
 ```{r eval=FALSE}
-got <- read.csv(file = 'got.csv')
+got <- read.csv(file = 'got.csv', stringsAsFactors = FALSE)
 ```
 
 __Learned more about the data as a whole__
@@ -400,24 +400,23 @@ __Learned more about the data as a whole__
 
 __Looked at the data by rows and columns__
 
-| Code                                 | Description                         |
-| :----------------------------------- | :-----------------------------------|
-| `filter(got, Temperature < 85`       | Rows with temperature less than 80  |
-| `filter(got, Chirpspersecond > 15`   | Rows with chirps per second greater than 15 |
-| `select(got, Chirpspersecond)`       | First column, Chirpspersecond       |
-| `select(got, Temperature)`           | Second column, Temperature          |
+| Code                                 | Description                          |
+| :----------------------------------- | :------------------------------------|
+| `filter(got, popularity > 0.4)`      | Rows with popularity greater than 0.4|
+| `select(got, name, isAlive)`         | Name and isAlive columns, got        |
 
 __Calculated descriptive statistics on the data__
 
-| Code                  | Description                       |
-| :-------------------- | :---------------------------------|
-| `mean()`              | Average Temperature               |
-| `median()`            | Median Temperature                |
-| `sd()`                | Standard deviation of Temperature |
-| `max()`               | Maximum Temperature               |
-| `min()`               | Minimum Temperature               |
+| Code                  | Description            |
+| :-------------------- | :----------------------|
+| `mean()`              | Average                |
+| `median()`            | Median                 |
+| `sd()`                | Standard               |
+| `max()`               | Maximum                |
+| `min()`               | Minimum                |
 
 __Visualizing the data using base R__
+
 
 got is a rather well-formed dataset. Let's practice our new skills on a
 slightly more realistic dataset and learn additional skills for
