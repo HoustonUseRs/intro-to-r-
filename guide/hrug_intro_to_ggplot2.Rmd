@@ -1,0 +1,2030 @@
+---
+title: "Intro to ggplot2"
+author: "Adapted from _A Gentle Guide to the Grammar of Graphics with ggplot2_ by Garrick Aden-Buie"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: paper
+    css: css/hideOutput.css
+---
+
+```{r setup, include=FALSE}
+library(kableExtra)
+library(knitr)
+library(tidyverse)
+library(htmltools)
+library(extrafont)
+library(showtext)
+library(gapminder)
+
+# loadfonts(device = "win")
+
+# automatically use showtext for new devices
+showtext_auto()
+
+PrettyTable <- function(data) {
+  data %>% 
+    kable() %>% 
+    kable_styling(bootstrap_options = c("striped", "hover",
+                                        "condensed", "responsive"),
+                  full_width = FALSE)
+}
+
+#Color Format
+ColFmt <- function(x, color = 'red') {
+  outputFormat <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+  if (outputFormat == "latex") {
+    paste("\\textcolor{", color, "}{", x, "}", sep = "")
+  } else if (outputFormat == "html") {
+    paste("<font color='", color, "'>", x, "</font>", sep = "")
+  } else {
+    x
+  }
+}
+
+```
+
+# What is ggplot2?
+> The transferrable skills from ggplot2 are not the idiosyncracies of plotting syntax, but a powerful way of thinking about visualisation, as a way of **mapping between variables and the visual properties of geometric objects** that you can perceive. 
+> `r tufte::quote_footer('Hadley Wickham')` 
+>
+>
+> Source: <http://disq.us/p/sv640d>
+
+- _gg_ is for __Grammar of Graphics__
+- `ggplot2` is a huge package: philosophy + functions
+
+# Getting started
+
+**Easy**: install the [tidyverse](http://tidyverse.org)
+
+```r{eval=FALSE}
+install.packages('tidyverse')
+```
+
+**Medium**: install just `ggplot2`
+
+```r{eval=FALSE}
+install.packages('ggplot2')
+```
+
+**Expert**: install from GitHub (latest development version)
+
+```r{eval=FALSE}
+devtools::install_github('tidyverse/ggplot2')
+```
+
+## Load the tidyverse
+
+```{r library-tidyverse, echo=TRUE, message=TRUE, warning=TRUE}
+library(tidyverse)
+```
+
+## Other packages for this tutorial
+
+We'll use an excerpt of the [gapminder](http://www.gapminder.org/data/) dataset
+provided by the [`gapminder` package](https://github.com/jennybc/gapminder) by 
+Jenny Bryan.
+
+```{r library-extra, message=FALSE, eval=FALSE}
+# uncomment the next line to install {gapminder} package if not installed yet
+# install.packages("gapminder")
+library(gapminder)
+```
+
+# Concepts of ggplot2
+
+## How do we express visuals in words?
+
+
+- **`r ColFmt('Data')`** to be visualized
+
+- **`r ColFmt('Aes')`thetic mappings** from data to visual component
+
+- **`r ColFmt('Geom')`etric objects** that appear on the plot
+
+- **`r ColFmt('Facet')`s** group into subplots
+
+- **`r ColFmt('Coord')`inates** organize location of geometric objects
+
+- **`r ColFmt('Scale')`s** define the range of values for aesthetics
+
+- **`r ColFmt('Stat')`istics** transform data on the way to visualization
+
+## Tidy Data
+
+### Data
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<font size = "4"> **Data** </font>
+```r{eval=FALSE}
+ggplot(data)
+```
+</div>
+  
+<div class = "col-md-8">
+<font size = "4"> **Tidy Data** </font>
+
+1. Each variable forms a **`r ColFmt('column')`**
+
+2. Each observation forms a **`r ColFmt('row')`**
+
+3. Each observational unit forms a table
+
+<font size = "4"> **Key** </font>
+
+1. What information do I want to use in my visualization?
+
+2. Is that data contained in **`r ColFmt('one column/row')`** for a given data 
+point?
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<font size = "4"> **Data** </font>
+```r{eval=FALSE}
+ggplot(data)
+```
+</div>
+  
+<div class = "col-md-8">
+
+```{r tidy-messy1, results='asis', echo=FALSE}
+pop_simple <- gapminder %>% 
+  filter(
+    country %in% c("Canada", "China", "United States"), 
+    year >= 1997
+  ) %>% 
+  select(country, year, pop) %>% 
+  mutate(pop = pop / 10^6)
+
+messy_pop <- pop_simple %>% spread(year, pop)
+
+PrettyTable(messy_pop)
+```
+
+```r{eval=FALSE}
+tidy_pop <- gather(messy_pop, 'year', 'pop', -country)
+```
+
+```{r tidy-tidy1, result='asis', echo=FALSE}
+tidy_pop <- gather(messy_pop, 'year', 'pop', -country)
+
+PrettyTable(tidy_pop)
+```
+
+</div>
+</div>
+
+### Aesthetic
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<font size = "4"> **Data** </font> <br>
+<font size = "4"> **Aesthetic Mapping** </font> <br>
+```r{eval=FALSE}
++ aes()
+```
+</div>
+  
+<div class = "col-md-8">
+<font size = "4"> **Mapping** </font>
+
+Map data to visual elements or parameters
+
+- year → **x**
+
+- pop → **y**
+
+- country → *shape*, *color*, etc.
+
+```r
+aes(
+  x = year,
+  y = pop,
+  color = country
+)
+```
+
+</div>
+</div>
+
+### Geometric
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<font size = "4"> **Data** </font> <br>
+<font size = "4"> **Aesthetic Mapping** </font> <br>
+<font size = "4"> **Geometric Objects** </font> <br>
+```r{eval=FALSE}
++ geom_*()
+```
+</div>
+  
+<div class = "col-md-8">
+<font size = "4"> **Geometric Objects** </font>
+
+Geometric objects displayed on the plot
+
+```{r geom_demo, echo=FALSE, fig.width=6, out.width="650px"}
+minimal_theme <- theme_bw() +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    panel.border = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5),
+    plot.background = element_rect(fill = "#FAFAFA", color = NA),
+    panel.background = element_rect(fill = "#FAFAFA", color = NA)
+  )
+
+set.seed(4242)
+df_geom <- tibble(y = rnorm(10), x = 1:10)
+
+g_geom <- list()
+g_geom$point <- ggplot(df_geom, aes(x, y)) + geom_point() + ggtitle("geom_point()")
+g_geom$line <- ggplot(df_geom, aes(x, y)) + geom_line() + ggtitle("geom_line()")
+g_geom$bar <- ggplot(df_geom, aes(x, y)) + geom_col() + ggtitle("geom_col()")
+g_geom$boxplot <- ggplot(df_geom, aes(y = y)) + geom_boxplot() + ggtitle("geom_boxplot()")
+g_geom$histogram <- ggplot(df_geom, aes(y)) + geom_histogram(binwidth = 1) + ggtitle("geom_histogram()")
+g_geom$density <- ggplot(df_geom, aes(y)) + geom_density(fill = "grey40", alpha = 0.25) + ggtitle("geom_density()") + xlim(-4, 4)
+
+g_geom <- map(g_geom, ~ . + minimal_theme)
+
+cowplot::plot_grid(plotlist = g_geom)
+```
+
+***
+
+Here are the [some of the most widely used geoms](https://eric.netlify.com/2017/08/10/most-popular-ggplot2-geoms/)
+
+| Type | Function |
+|:----:|:--------:|
+| Point | `geom_point()` |
+| Line | `geom_line()` |
+| Bar | `geom_bar()`, `geom_col()` |
+| Histogram | `geom_histogram()` |
+| Regression | `geom_smooth()` |
+| Boxplot | `geom_boxplot()` |
+| Text | `geom_text()` |
+| Vert./Horiz. Line | `geom_{vh}line()` |
+| Count | `geom_count()` |
+| Density | `geom_density()` |
+
+<https://eric.netlify.com/2017/08/10/most-popular-ggplot2-geoms/>
+
+***
+
+See <http://ggplot2.tidyverse.org/reference/> for many more options
+
+```{r ggplot2-geom-names, echo=FALSE}
+# geom_
+old_width = options(width = 60)
+lsf.str("package:ggplot2") %>% grep("^geom_", ., value = TRUE)
+options(width = old_width$width)
+```
+
+***
+
+Or just start typing `geom_` in RStudio
+
+<img src="images/geom.gif" width="200px" style="float: right; margin-right: 100px; margin-top: -25px;">
+
+</div>
+</div>
+
+### Our First Plot!
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+```{r first-plot1a, eval=FALSE}
+ggplot(tidy_pop)
+```
+
+</div>
+  
+<div class = "col-md-8">
+
+```{r first-plot1a-out, ref.label='first-plot1a', echo=FALSE, out.width="100%"}
+```
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+```{r first-plot1b, eval=FALSE}
+
+ggplot(tidy_pop) +
+  aes(x = year, #<<
+      y = pop) #<<
+```
+
+</div>
+  
+<div class = "col-md-8">
+
+```{r first-plot1b-out, ref.label='first-plot1b', echo=FALSE, out.width="100%"}
+```
+
+</div>
+</div>
+
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+```{r first-plot1c, eval=FALSE}
+ggplot(tidy_pop) +
+  aes(x = year,
+      y = pop) +
+  geom_point() #<<
+```
+
+</div>
+  
+<div class = "col-md-8">
+
+```{r first-plot1c-out, ref.label='first-plot1c', echo=FALSE, out.width="100%"}
+```
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+```{r first-plot1d, eval=FALSE, warning=FALSE, message=FALSE}
+ggplot(tidy_pop) +
+  aes(x = year,
+      y = pop,
+      color = country) + #<<
+  geom_point()
+```
+
+</div>
+  
+<div class = "col-md-8">
+
+```{r first-plot1d)-out, ref.label='first-plot1d', echo=FALSE, out.width="100%", warning=FALSE, message=FALSE}
+```
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+```{r first-plot2-fake, eval=FALSE, warning=FALSE, message=FALSE}
+ggplot(tidy_pop) +
+  aes(x = year,
+      y = pop,
+      color = country) + 
+  geom_point() +
+  geom_line() #<<
+```
+
+```r
+geom_path: Each group consists
+of only one observation. 
+Do you need to adjust the 
+group aesthetic?
+```
+
+</div>
+  
+<div class = "col-md-8">
+
+```{r first-plot2-fake-out, ref.label='first-plot2-fake', echo=FALSE, out.width="100%", warning=FALSE, message=FALSE}
+```
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+```{r first-plot2, eval=FALSE}
+ggplot(tidy_pop) +
+  aes(x = year,
+      y = pop,
+      color = country) +
+  geom_point() +
+  geom_line(
+    aes(group = country)) #<<
+```
+
+</div>
+  
+<div class = "col-md-8">
+
+```{r first-plot2-out, ref.label='first-plot2', echo=FALSE, out.width="100%"}
+```
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+```{r first-plot3, eval=FALSE}
+g <- ggplot(tidy_pop) +
+  aes(x = year,
+      y = pop,
+      color = country) +
+  geom_point() +
+  geom_line(
+    aes(group = country))
+
+g
+```
+
+</div>
+  
+<div class = "col-md-8">
+
+```{r first-plot3-out, ref.label='first-plot2', echo=FALSE, out.width="100%"}
+```
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<font size = "4"> **Data** </font> <br>
+<font size = "4"> **Aesthetic Mapping** </font> <br>
+<font size = "4"> **Geometric Objects** </font> <br>
+```r{eval=FALSE}
++ geom_*()
+```
+</div>
+  
+<div class = "col-md-8">
+<font size = "4"> **Geometric Objects** </font>
+```r
+geom_*(mapping, data, stat, position)
+```
+
+- `data` Geoms can have their own data
+    - Has to map onto global coordinates
+
+- `map` Geoms can have their own aesthetics
+    - Inherits global aesthetics
+    - Have geom-specific aesthetics
+        - `geom_point` needs `x` and `y`, optional `shape`, `color`, `size`, etc.
+        - `geom_ribbon` requires `x`, `ymin` and `ymax`, optional `fill`
+    - `?geom_ribbon`
+    
+***
+    
+```r
+geom_*(mapping, data, stat, position)
+```
+
+- `stat` Some geoms apply further transformations to the data
+    - All respect `stat = 'identity'`
+    - Ex: `geom_histogram` uses `stat_bin()` to group observations
+    
+- `position` Some adjust location of objects
+    - `'dodge'`, `'stack'`, `'jitter'`
+
+</div>
+</div>
+
+### Facets
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<font size = "4"> **Data** </font> <br>
+<font size = "4"> **Aesthetic Mapping** </font> <br>
+<font size = "4"> **Geometric Objects** </font> <br>
+<font size = "4"> **Facets** </font> <br>
+```r
++facet_wrap() 
+
++facet_grid()
+```
+
+</div>
+  
+<div class = "col-md-8">
+
+```{r geom_facet_setup, include=FALSE}
+tidy_pop <- left_join(tidy_pop, select(gapminder, country, continent))
+
+g <- ggplot(tidy_pop) +
+  aes(x = year,
+      y = pop,
+      color = country) +
+  geom_point() +
+  geom_line(aes(group = country))
+```
+
+<font size = "4"> **Facets** </font>
+```{r geom_facet, echo=TRUE, out.width="90%", fig.width=6}
+g + facet_wrap(~ country)
+```
+    
+***
+
+```{r geom_grid, echo=TRUE, out.width="90%", fig.width=6}
+g + facet_grid(continent ~ country)
+```
+
+</div>
+</div>
+
+### Coordinates
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<font size = "4"> **Data** </font> <br>
+<font size = "4"> **Aesthetic Mapping** </font> <br>
+<font size = "4"> **Geometric Objects** </font> <br>
+<font size = "4"> **Facets** </font> <br>
+<font size = "4"> **Coordinates** </font> <br>
+```r
++ coord_*()
+```
+
+</div>
+  
+<div class = "col-md-8">
+<font size = "4"> **Coordinates** </font>
+```{r coord-ex, echo=TRUE, out.width="90%", fig.width=6}
+g + coord_flip()
+```
+
+***
+
+```{r coord-ex2, echo=TRUE, out.width="90%", fig.width=6}
+g + coord_polar()
+```
+
+</div>
+</div>
+
+### Scales
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<font size = "4"> **Data** </font> <br>
+<font size = "4"> **Aesthetic Mapping** </font> <br>
+<font size = "4"> **Geometric Objects** </font> <br>
+<font size = "4"> **Facets** </font> <br>
+<font size = "4"> **Coordinates** </font> <br>
+<font size = "4"> **Scales** </font> <br>
+```r
++ scale_*_*()
+```
+
+</div>
+  
+<div class = "col-md-8">
+<font size = "4"> **Scales** </font>
+`scale` + `_` + `<aes>` + `_` + `<type>` + `()`
+
+What parameter do you want to adjust? → `<aes>` <br>
+What type is the parameter? → `<type>`
+
+- I want to change my discrete x-axis<br>`scale_x_discrete()`
+- I want to change range of point sizes from continuous variable<br>`scale_size_continuous()`
+- I want to rescale y-axis as log<br>`scale_y_log10()`
+- I want to use a different color palette<br>`scale_fill_discrete()`<br>`scale_color_manual()`
+
+***
+
+```{r scale_ex1, out.width="90%", fig.width=6}
+g + scale_color_manual(values = c("peru", "pink", "plum"))
+```
+
+***
+
+```{r scale_ex2, out.width="90%", fig.width=6}
+g + scale_y_log10()
+```
+
+***
+
+```{r scale_ex4, out.width="90%", fig.width=6}
+g + scale_x_discrete(labels = c("MCMXCVII", "MMII", "MMVII"))
+```
+
+</div>
+</div>
+
+### Statistics
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<font size = "4"> **Data** </font> <br>
+<font size = "4"> **Aesthetic Mapping** </font> <br>
+<font size = "4"> **Geometric Objects** </font> <br>
+<font size = "4"> **Facets** </font> <br>
+<font size = "4"> **Coordinates** </font> <br>
+<font size = "4"> **Scales** </font> <br>
+<font size = "4"> **Statistics** </font> <br>
+```r
+stat_count()
+
+stat_identity()
+```
+
+</div>
+  
+<div class = "col-md-8">
+<font size = "4"> **Statistics** </font>
+`stat_count()` is not used/called explicitly, and typically used in conjuction with 
+`geom_*()` that visualize counts - `geom_histogram()`, `geom_bar()`, `geom_col()`.
+
+```{r stats-ex, echo=TRUE, warning=FALSE, message=FALSE, out.width="90%", fig.width=6}
+ggplot(gapminder, aes(gdpPercap)) +
+  geom_histogram(aes(y = stat(count)))
+```
+
+**Note**
+
+`geom_bar()` uses `stat_count()` by default: it counts the number of cases at 
+each x position. 
+
+`geom_col()` uses `stat_identity()`: it leaves the data as is.
+
+</div>
+</div>
+
+### Labels
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<font size = "4"> **Data** </font> <br>
+<font size = "4"> **Aesthetic Mapping** </font> <br>
+<font size = "4"> **Geometric Objects** </font> <br>
+<font size = "4"> **Facets** </font> <br>
+<font size = "4"> **Coordinates** </font> <br>
+<font size = "4"> **Scales** </font> <br>
+<font size = "4"> **Statistics** </font> <br>
+<font size = "4"> **Labels** </font> <br>
+```r
++ labs()
+```
+
+</div>
+  
+<div class = "col-md-8">
+<font size = "4"> **Labels** </font>
+```{r labs-ex, echo=TRUE, out.width="90%", fig.width=6}
+g + labs(x = "Year", y = "Population")
+```
+
+</div>
+</div>
+
+### Themes
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<font size = "4"> **Data** </font> <br>
+<font size = "4"> **Aesthetic Mapping** </font> <br>
+<font size = "4"> **Geometric Objects** </font> <br>
+<font size = "4"> **Facets** </font> <br>
+<font size = "4"> **Coordinates** </font> <br>
+<font size = "4"> **Scales** </font> <br>
+<font size = "4"> **Statistics** </font> <br>
+<font size = "4"> **Labels** </font> <br>
+<font size = "4"> **Themes** </font> <br>
+```r
++ theme()
+```
+
+</div>
+  
+<div class = "col-md-8">
+<font size = "4"> **Themes** </font>
+Change the appearance of plot decorations<br>
+i.e. things that aren't mapped to data
+
+A few "starter" themes ship with the package
+
+- `g + theme_bw()`
+- `g + theme_dark()`
+- `g + theme_gray()`
+- `g + theme_light()`
+- `g + theme_minimal()`
+
+***
+
+Huge number of parameters, grouped by plot area:
+
+- Global options: `line`, `rect`, `text`, `title`
+- `axis`: x-, y- or other axis title, ticks, lines
+- `legend`: Plot legends
+- `panel`: Actual plot area
+- `plot`: Whole image
+- `strip`: Facet labels
+
+***
+
+Theme options are supported by helper functions:
+
+- `element_blank()` removes the element
+- `element_line()`
+- `element_rect()`
+- `element_text()`
+
+***
+
+```{r, out.width="90%", fig.width=6}
+g + theme_bw()
+```
+
+***
+
+```{r, out.width="90%", fig.width=6}
+g + theme_minimal() + theme(text = element_text(family = "sans"))
+```
+
+***
+
+You can also set the theme globally with `theme_set()`
+
+All plots will now use this theme!
+
+```{r theme_set, cache=TRUE}
+my_theme <- theme_bw() +
+  theme(
+    text = element_text(family = "sans", size = 12),
+    panel.border = element_rect(colour = 'grey80'), 
+    panel.grid.minor = element_blank()
+  )
+
+theme_set(my_theme)
+```
+
+***
+
+```{r, out.width="90%", fig.width=6, dependson='theme_set'}
+g
+```
+
+***
+
+You may also alter certain aspects of the plot, in addition to the defaults set in `theme_set()`; in this case, the `legend` is moved to the bottom.
+
+```{r, out.width="90%", fig.width=6, dependson='theme_set'}
+g + theme(legend.position = 'bottom')
+```
+
+</div>
+</div>
+
+## Saving Your Work
+
+To save your plot, use **ggsave**
+
+```{r ggsave, eval=FALSE}
+ggsave(
+  filename = "my_plot.png",
+  plot = my_plot,
+  width = 10,
+  height = 8,
+  dpi = 100,
+  device = "png"
+)
+```
+
+# Your First Plot!
+
+<!-- to hide code from users and show only output for practice --> 
+<script src="js/hideOutput.js"></script>
+
+```{r}
+library(gapminder)
+```
+
+```{r reset_theme, include=FALSE}
+theme_set(theme_gray())
+```
+
+```{r head-gapminder, echo=FALSE}
+head(gapminder)
+```
+
+```{r summary-gapminder, echo=FALSE, comment=""}
+glimpse(gapminder)
+```
+
+Let's start with `lifeExp` vs `gdpPercap`
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<div class="fold s">
+```{r gapminder-le-gdp-1, fig.show="hide"}
+ggplot(gapminder) +
+  aes(x = gdpPercap,
+      y = lifeExp)
+```
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-gdp-1", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Add points...
+
+<div class="fold s">
+```{r gapminder-le-gdp-2, fig.show="hide"}
+ggplot(gapminder) +
+  aes(x = gdpPercap,
+      y = lifeExp) +
+  geom_point() #<<
+```
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-gdp-2", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+How can I tell countries apart?
+
+<div class="fold s">
+```{r gapminder-le-gdp-3, fig.show="hide"}
+ggplot(gapminder) +
+  aes(x = gdpPercap,
+      y = lifeExp,
+      color = continent) + #<<
+  geom_point()
+```
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-gdp-3", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+GDP is squished together on the left
+
+<div class="fold s">
+```{r gapminder-le-gdp-4, fig.show="hide"}
+ggplot(gapminder) +
+  aes(x = gdpPercap,
+      y = lifeExp,
+      color = continent) +
+  geom_point() +
+  scale_x_log10() #<<
+```
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-gdp-4", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Still lots of overlap in the countries...
+
+<div class="fold s">
+```{r gapminder-le-gdp-5, fig.show="hide"}
+ggplot(gapminder) +
+  aes(x = gdpPercap,
+      y = lifeExp,
+      color = continent) +
+  geom_point() +
+  scale_x_log10() +
+  facet_wrap(~ continent) + #<<
+  guides(color = FALSE)     #<<
+```
+
+***
+
+No need for color legend thanks to facet titles
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-gdp-5", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Lots of overplotting due to point size
+
+<div class="fold s">
+```{r gapminder-le-gdp-6, fig.show="hide"}
+ggplot(gapminder) +
+  aes(x = gdpPercap,
+      y = lifeExp,
+      color = continent) +
+  geom_point(size = 0.25) + #<<
+  scale_x_log10() +
+  facet_wrap(~ continent) +
+  guides(color = FALSE)
+```
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-gdp-6", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Is there a trend?
+
+<div class="fold s">
+```{r gapminder-le-gdp-7, fig.show="hide"}
+ggplot(gapminder) +
+  aes(x = gdpPercap,
+      y = lifeExp,
+      color = continent) +
+  geom_line() + #<<
+  geom_point(size = 0.25) +
+  scale_x_log10() +
+  facet_wrap(~ continent) +
+  guides(color = FALSE)
+```
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-gdp-7", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Okay, that line just connected all of the points sequentially...
+
+<div class="fold s">
+```{r gapminder-le-gdp-8, fig.show="hide"}
+ggplot(gapminder) +
+  aes(x = gdpPercap,
+      y = lifeExp,
+      color = continent) +
+  geom_line(
+    aes(group = country) #<<
+  ) +
+  geom_point(size = 0.25) +
+  scale_x_log10() +
+  facet_wrap(~ continent) +
+  guides(color = FALSE)
+```
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-gdp-8", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+We need time on x-axis!
+
+<div class="fold s">
+```{r gapminder-gdp-year-1, fig.show="hide"}
+ggplot(gapminder) +
+  aes(x = year, #<<
+      y = gdpPercap, #<<
+      color = continent) +
+  geom_line(
+    aes(group = country)
+  ) +
+  geom_point(size = 0.25) +
+  scale_y_log10() + #<<
+  facet_wrap(~ continent) +
+  guides(color = FALSE)
+```
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-gdp-year-1", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Can't see x-axis labels, though
+
+<div class="fold s">
+```{r gapminder-gdp-year-2, fig.show="hide"}
+ggplot(gapminder) +
+  aes(x = year,
+      y = gdpPercap,
+      color = continent) +
+  geom_line(
+    aes(group = country)
+  ) +
+  geom_point(size = 0.25) +
+  scale_y_log10() +
+  scale_x_continuous(breaks = #<<
+    seq(1950, 2000, 25) #<<
+  ) +                            #<<
+  facet_wrap(~ continent) +
+  guides(color = FALSE)
+```
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-gdp-year-2", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+What about life expectancy?
+
+<div class="fold s">
+```{r gapminder-le-year-1, fig.show="hide"}
+ggplot(gapminder) +
+  aes(x = year, 
+      y = lifeExp, #<<
+      color = continent) +
+  geom_line(
+    aes(group = country)
+  ) +
+  geom_point(size = 0.25) +
+  #scale_y_log10() + #<<
+  scale_x_continuous(breaks = 
+    seq(1950, 2000, 25)
+  ) +  
+  facet_wrap(~ continent) +
+  guides(color = FALSE)
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-year-1", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Okay, let's add a trend line
+
+<div class="fold s">
+```{r gapminder-le-year-2, fig.show="hide", message=FALSE, warning=FALSE}
+ggplot(gapminder) +
+  aes(x = year, 
+      y = lifeExp,
+      color = continent) +
+  geom_line(
+    aes(group = country)
+  ) +
+  geom_point(size = 0.25) +
+  geom_smooth() + #<<
+  scale_x_continuous(breaks = 
+    seq(1950, 2000, 25)
+  ) +  
+  facet_wrap(~ continent) +
+  guides(color = FALSE)
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-year-2", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+De-emphasize individual countries
+
+<div class="fold s">
+```{r gapminder-le-year-3, fig.show="hide", message=FALSE, warning=FALSE}
+ggplot(gapminder) +
+  aes(x = year, 
+      y = lifeExp,
+      color = continent) +
+  geom_line(
+    aes(group = country),
+    color = "grey75" #<<
+  ) +
+  geom_point(size = 0.25) +
+  geom_smooth() + 
+  scale_x_continuous(breaks = 
+    seq(1950, 2000, 25)
+  ) +  
+  facet_wrap(~ continent) +
+  guides(color = FALSE)
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-year-3", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Points are still in the way
+
+<div class="fold s">
+```{r gapminder-le-year-4, fig.show="hide", message=FALSE, warning=FALSE}
+ggplot(gapminder) +
+  aes(x = year, 
+      y = lifeExp,
+      color = continent) +
+  geom_line(
+    aes(group = country),
+    color = "grey75"
+  ) +
+  #geom_point(size = 0.25) + #<<
+  geom_smooth() + 
+  scale_x_continuous(breaks = 
+    seq(1950, 2000, 25)
+  ) +  
+  facet_wrap(~ continent) +
+  guides(color = FALSE)
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+
+![](`r knitr::fig_chunk("gapminder-le-year-4", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Let's compare continents
+
+<div class="fold s">
+```{r gapminder-le-year-5, fig.show="hide", message=FALSE, warning=FALSE}
+ggplot(gapminder) +
+  aes(x = year, 
+      y = lifeExp,
+      color = continent) +
+  geom_line(
+    aes(group = country),
+    color = "grey75"
+  ) +
+  geom_smooth() + 
+  # scale_x_continuous(
+  #   breaks = 
+  #     seq(1950, 2000, 25)
+  # ) +  
+  # facet_wrap(~ continent) + #<<
+  guides(color = FALSE)
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-le-year-5", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Wait, what color is each continent?
+
+<div class="fold s">
+```{r gapminder-le-year-6, fig.show="hide", message=FALSE, warning=FALSE}
+ggplot(gapminder) +
+  aes(x = year, 
+      y = lifeExp,
+      color = continent) +
+  geom_line(
+    aes(group = country),
+    color = "grey75"
+  ) +
+  geom_smooth() + 
+  theme( #<<
+  legend.position = "bottom" #<<
+  ) #<<
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-le-year-6", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Let's try the minimal theme
+
+<div class="fold s">
+```{r gapminder-le-year-7, fig.show="hide", message=FALSE, warning=FALSE}
+ggplot(gapminder) +
+  aes(x = year, 
+      y = lifeExp,
+      color = continent) +
+  geom_line(
+    aes(group = country),
+    color = "grey75"
+  ) +
+  geom_smooth() + 
+  theme_minimal() + #<<
+  theme(
+  legend.position = "bottom"
+  )
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-le-year-7", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Fonts are kind of big
+
+<div class="fold s">
+```{r gapminder-le-year-8, fig.show="hide", message=FALSE}
+ggplot(gapminder) +
+  aes(x = year, 
+      y = lifeExp,
+      color = continent) +
+  geom_line(
+    aes(group = country),
+    color = "grey75"
+  ) +
+  geom_smooth() + 
+  theme_minimal( 
+    base_size = 8) + #<<
+  theme(
+  legend.position = "bottom"
+  )
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-le-year-8", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Cool, let's switch gears
+
+<div class="fold s">
+```{r gapminder-americas-data, fig.show="hide"}
+americas <- 
+  gapminder %>% 
+  filter(
+    country %in% c(
+      "United States",
+      "Canada",
+      "Mexico",
+      "Ecuador"
+    )
+  )
+```
+
+Let's look at four countries in more detail. How do their populations compare to each other?
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+<!-- ![](`r knitr::fig_chunk("gapminder-le-year-8", "png")`) -->
+```{r echo=FALSE}
+americas
+```
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+
+<div class="fold s">
+```{r gapminder-americas-1, fig.show="hide"}
+ggplot(americas) +
+  aes(
+    x = year,
+    y = pop
+  ) +
+  geom_col()
+```
+
+Let's look at four countries in more detail. How do their populations compare to each other?
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-americas-1", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Yeah, but how many people are in each country?
+
+<div class="fold s">
+```{r gapminder-americas-2, fig.show="hide"}
+ggplot(americas) +
+  aes(
+    x = year,
+    y = pop,
+    fill = country #<<
+  ) +
+  geom_col()
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-americas-2", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Bars are "stacked", can we separate?
+
+<div class="fold s">
+```{r gapminder-americas-3, fig.show="hide"}
+ggplot(americas) +
+  aes(
+    x = year,
+    y = pop,
+    fill = country
+  ) +
+  geom_col(
+    position = "dodge" #<<
+  )
+```
+
+`position = "dodge"` places objects _next to each other_ instead of overlapping
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-americas-3", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+What is scientific notation anyway?
+
+<div class="fold s">
+```{r gapminder-americas-4, fig.show="hide"}
+ggplot(americas) +
+  aes(
+    x = year,
+    y = pop / 10^6, #<<
+    fill = country
+  ) +
+  geom_col(
+    position = "dodge" 
+  )
+```
+
+ggplot aesthetics can take expressions!
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-americas-4", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Might be easier to see countries individually
+
+<div class="fold s">
+```{r gapminder-americas-5, fig.show="hide"}
+ggplot(americas) +
+  aes(
+    x = year,
+    y = pop / 10^6,
+    fill = country
+  ) +
+  geom_col(
+    position = "dodge" 
+  ) +
+  facet_wrap(~ country) + #<<
+  guides(fill = FALSE) #<<
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-americas-5", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Let range of y-axis vary in each plot
+
+<div class="fold s">
+```{r gapminder-americas-6, fig.show="hide"}
+ggplot(americas) +
+  aes(
+    x = year,
+    y = pop / 10^6,
+    fill = country
+  ) +
+  geom_col(
+    position = "dodge" 
+  ) +
+  facet_wrap(~ country,
+    scales = "free_y") + #<<
+  guides(fill = FALSE)
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-americas-6", "png")`)
+
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+What about life expectancy again?
+
+<div class="fold s">
+```{r gapminder-americas-7, fig.show="hide"}
+ggplot(americas) +
+  aes(
+    x = year,
+    y = lifeExp, #<<
+    fill = country
+  ) +
+  geom_col(
+    position = "dodge" 
+  ) +
+  facet_wrap(~ country,
+    scales = "free_y") +
+  guides(fill = FALSE)
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-americas-7", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+This should really be  `r emo::ji('chart_with_upwards_trend')`...instead of 
+`r emo::ji('bar_chart')`
+
+
+<div class="fold s">
+```{r gapminder-americas-8, fig.show="hide"}
+ggplot(americas) +
+  aes(
+    x = year,
+    y = lifeExp,
+    fill = country
+  ) +
+  geom_line() + #<<
+  facet_wrap(~ country,
+    scales = "free_y") +
+  guides(fill = FALSE)
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-americas-8", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+`r emo::ji('bar_chart')` are **fill**ed
+`r emo::ji('chart_with_upwards_trend')` are **color**ed
+
+
+<div class="fold s">
+```{r gapminder-americas-9, fig.show="hide"}
+ggplot(americas) +
+  aes(
+    x = year,
+    y = lifeExp,
+    color = country #<<
+  ) +
+  geom_line() +
+  facet_wrap(~ country,
+    scales = "free_y") +
+  guides(color = FALSE) #<<
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-americas-9", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Altogether now!
+
+
+<div class="fold s">
+```{r gapminder-americas-10, fig.show="hide"}
+ggplot(americas) +
+  aes(
+    x = year,
+    y = lifeExp,
+    color = country
+  ) +
+  geom_line()
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-americas-10", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Okay, changing gears again. What is range of life expectancy in Americas?
+
+<div class="fold s">
+```{r gapminder-all-americas-1, fig.show="hide"}
+gapminder %>% 
+  filter(
+    continent == "Americas"
+  ) %>% #<<
+  ggplot() + #<<
+  aes(
+    x = year,
+    y = lifeExp
+  )
+```
+
+You can pipe into `ggplot()`!  
+Just watch for `%>%` changing to `+`
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-all-americas-1", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Boxplot for life expectancy range
+
+<div class="fold s">
+```{r gapminder-all-americas-2, fig.show="hide", message=FALSE, warning=FALSE}
+gapminder %>% 
+  filter(
+    continent == "Americas"
+  ) %>%
+  ggplot() +
+  aes(
+    x = year,
+    y = lifeExp
+  ) +
+  geom_boxplot() #<<
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-all-americas-2", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Why not boxplots by year?
+
+<div class="fold s">
+```{r gapminder-all-americas-3, fig.show="hide"}
+gapminder %>% 
+  filter(
+    continent == "Americas"
+  ) %>%
+  mutate( #<<
+    year = factor(year) #<<
+  ) %>%  #<<
+  ggplot() +
+  aes(
+    x = year,
+    y = lifeExp
+  ) +
+  geom_boxplot()
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-all-americas-3", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+OK, what about global life expectancy?
+
+<div class="fold s">
+```{r gapminder-all-americas-4, fig.show="hide"}
+gapminder %>% 
+  # filter(
+  #   continent == "Americas"
+  # ) %>%
+  mutate(
+    year = factor(year)
+  ) %>% 
+  ggplot() +
+  aes(
+    x = year,
+    y = lifeExp
+  ) +
+  geom_boxplot()
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-all-americas-4", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Can we have cute little boxplots for each continent?
+
+<div class="fold s">
+```{r gapminder-all-americas-5, fig.show="hide"}
+gapminder %>% 
+  mutate(
+    year = factor(year)
+  ) %>% 
+  ggplot() +
+  aes(
+    x = year,
+    y = lifeExp,
+    fill = continent #<<
+  ) +
+  geom_boxplot()
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-all-americas-5", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Hard to read years, let's rotate
+
+<div class="fold s">
+```{r gapminder-all-americas-6, fig.show="hide"}
+gapminder %>% 
+  mutate(
+    year = factor(year)
+  ) %>% 
+  ggplot() +
+  aes(
+    x = year,
+    y = lifeExp,
+    fill = continent
+  ) +
+  geom_boxplot() +
+  coord_flip() #<<
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-all-americas-6", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Use `dplyr::mutate()` to group by decade
+
+<div class="fold s">
+```{r gapminder-all-americas-7, fig.show="hide"}
+gapminder %>% 
+  mutate(
+    decade = floor(year / 10), #<<
+    decade = decade * 10,      #<<
+    decade = factor(decade)      #<<
+  ) %>% 
+  ggplot() +
+  aes(
+    x = decade, #<<
+    y = lifeExp,
+    fill = continent
+  ) +
+  geom_boxplot() +
+  coord_flip()
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-all-americas-7", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Let's hide Oceania...
+
+<div class="fold s">
+```{r gapminder-all-americas-8, fig.show="hide", echo=1}
+g <- gapminder %>% 
+  filter( #<<
+    continent != "Oceania" #<<
+  ) %>% #<<
+  mutate(
+    decade = floor(year / 10) * 10, decade = factor(decade)      
+  ) %>% 
+  ggplot() +
+  aes(
+    x = decade,
+    y = lifeExp,
+    fill = continent
+  ) +
+  geom_boxplot() +
+  coord_flip()
+
+g
+```
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-all-americas-8", "png")`)
+
+</div>
+</div>
+
+<div class = "row">
+  
+<div class = "col-md-4">
+Labeling the plot
+
+<div class="fold s">
+```{r gapminder-all-americas-9, fig.show="hide", echo=1}
+g +
+  theme_minimal(8) +
+  labs(
+    y = "Life Expectancy",
+    x = "Decade",
+    fill = NULL,
+    title = "Life Expectancy by Continent and Decade",
+    caption = "gapminder.org"
+  )
+```
+
+Note `x` and `y` are _original_ aesthetics, `coord_flip()` happens _after_.  
+
+Remove legend labels by setting `= NULL`.
+
+</div>
+</div>
+  
+<div class = "col-md-8">
+![](`r knitr::fig_chunk("gapminder-all-americas-9", "png")`)
+
+</div>
+</div>
+
+# Extra Resources
+
+## Stack Exchange
+
+![](images/stack-exchange-search.png)
+
+## Google
+
+![](images/google-search.png)
+
+## ggplot2 Extensions
+
+[ggplot2 extensions](https://www.ggplot2-exts.org/)
+
+![](images/ggplot2-exts-gallery.png)
+
+## ggplot2 and beyond
+
+### Learn more
+
+- **ggplot2 docs:** <http://ggplot2.tidyverse.org/>
+
+- **R4DS - Data visualization:** <http://r4ds.had.co.nz/data-visualisation.html>
+
+- **Hadley Wickham's ggplot2 book:** <https://www.amazon.com/dp/0387981403/>
+
+### Noteworthy RStudio Add-Ins
+
+- [esquisse](https://github.com/dreamRs/esquisse): Interactively build ggplot2 plots
+
+- [ggplotThemeAssist](https://github.com/calligross/ggthemeassist): Customize your ggplot theme interactively
+
+- [ggedit](https://github.com/metrumresearchgroup/ggedit): Layer, scale, and theme editing
+
+## Practice and Review
+
+### #TidyTuesday
+
+- <https://github.com/rfordatascience/tidytuesday>
+
+### Fun Datasets
+
+- `fivethirtyeight`
+
+- `nycflights`
+
+- `ggplot2movies`
+
+### Review
+
+- Slides and code on GitHub: <TODO!!!>
+
+# Credits
+
+<center>
+<font size="4">
+@grrrck <br>
+github.com/gadenbuie <br>
+Garrick Aden-Buie
+</font>
+</center>
+
