@@ -11,13 +11,20 @@ read.csv(file = 'got.csv')
 got <- read.csv(file = 'got.csv')
 
 # Glancing at the data
+str(got) # Structure of data                   
+summary(got) #Summary of the data                 
+View(got) # View data in file viewer
+
+# Remove factors
+got <- read.csv(file = 'got.csv', stringsAsFactors = FALSE)
+
+
 names(got) # Column header names                 
 dim(got) # Number of rows by number of columns 
 nrow(got) # Number of rows                      
 ncol(got) # Number of columns                   
 str(got) # Structure of data                   
-summary(got) #Summary of the data                 
-View(got) # View data in file viewer
+
 
 # packages
 packageDescription("dplyr")
@@ -29,7 +36,7 @@ select(got, names)
 ??select
 
 # ummm... it looks like we need to install the `dplyr` package.
-install.packages('dplyr')
+# install.packages('dplyr')
 installed.packages()
 
 library(dplyr)

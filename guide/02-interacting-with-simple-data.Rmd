@@ -96,6 +96,104 @@ Let's get a quick sense of what this data is like!
 
 ## Glancing at the data
 
+Try this, and let's talk about common data structures in R.
+```{r}
+str(got)
+```
+
+# Data structures
+
+The most important data structures in base R can be organized by their
+dimensionality and whether their contents are of the same type (homogeneous).
+
+| Dimensionality | Homogeneous   | Heterogeneous   |
+| :------------- | :-------------| :---------------|
+| 1d             | Atomic Vector | List            |
+| 2d             | Matrix        | Data frame      |
+| 1d             | Array         |                 |
+
+## Vectors
+The basic data structure in R is the vector and there are 2 type of vectors:
+atomic vectors and lists.
+They have three common properties:
+- Type, `typeof()`, what it is.
+- Length, `length()`, how many elements it contains.
+- Attributes, `attributes()`, additional arbitrary metadata.
+They differ in the types of their elements: all elements of an atomic vector
+ must be the same type, whereas the elements of a list can have different types.
+
+### Atomic vectors:
+There are four common types of atomic vectors: logical, integer, double (often called numeric),
+and character. Atomic vectors are usually created with `c()`, short for combine,
+and they are always flat, even if you nest them.
+```{r}
+c(1, c(2, c(3, 4)))
+```
+
+### Lists:
+Lists are different from atomic vectors because their elements can be of any type,
+including lists (recursive). You construct lists by using `list()` instead of
+`c()`.
+```{r}
+x <- list(1:3, "a", c(TRUE, FALSE, TRUE), c(2.3, 5.9))
+str(x)
+```
+Lists are used to build up many of the more complicated data structures in R, like
+in the case of ***data frames***.
+
+## Attributes
+All objects can have arbitrary additional attributes, used to store metadata about the object.
+ Attributes can be thought of as a named list (with unique names).
+  Attributes can be accessed with `attributes()`.
+The two most important/common ones are:
+- Names, a character vector giving each element a name, described in names.
+- Dimensions, used to turn vectors into matrices and arrays.
+
+## Factors
+One important use of attributes is to define factors.
+A factor is a vector that can contain only predefined values,
+and is used to store categorical data.
+They have two attributes: the class, “factor”, which makes them behave differently from regular vectors,
+and the levels, which defines the set of allowed values.
+```{r}
+x <- factor(c("a", "b", "b", "a"))
+x
+class(x)
+levels(x)
+```
+Unfortunately, most data loading functions in R automatically convert character vectors to factors.
+Instead, use the argument stringsAsFactors = FALSE to suppress this behaviour, and then manually convert character vectors to factors when need it.
+
+```{r}
+got <- read.csv(file = 'got.csv', stringsAsFactors = FALSE)
+```
+### Matrices and arrays
+Adding a dim attribute to an atomic vector allows it to behave like a multi-dimensional array.
+ A special case of the array is the matrix, which has two dimensions.
+`length()` and `names()` have high-dimensional generalisations:
+- length() generalises to `nrow()` and `ncol()` for matrices, and `dim()` for arrays.
+- names() generalises to `rownames()` and `colnames()` for matrices, and `dimnames()`,
+a list of character vectors, for arrays.
+Matrices and arrays are usually created with `matrix()` and `array()`
+
+### Data frames (yes, no need to `import pandas as pd`)
+A data frame is the most common way of storing data in R, and makes data analysis easier.
+A data frame is a list of equal-length vectors. This makes it a 2-dimensional structure,
+ so it shares properties of both the matrix and the list.
+This means that a data frame has names(), colnames() (same thing as names() for DF),
+and rownames().
+ The length() of a data frame is the length of the underlying list and so is the same as ncol();
+  nrow() gives the number of rows.
+
+You create a data frame using `data.frame()`, which takes named vectors as input.
+It defaults strings into factors, so make sure to use `stringsAsFactors = FALSE`.
+```{r}
+df <- data.frame(number = 1:3,
+  letter = c("one", "two", "three"),
+  , stringsAsFactors = FALSE)
+str(df)
+```
+
 Here's a table of some quick functions we can run on the data to learn about it:
 
 | Code           | Description                         |
@@ -104,25 +202,12 @@ Here's a table of some quick functions we can run on the data to learn about it:
 | `dim(got)`     | Number of rows by number of columns |
 | `nrow(got)`    | Number of rows                      |
 | `ncol(got)`    | Number of columns                   |
+| `View(got)`    | View data in file viewer            |
 | `str(got)`     | Structure of data                   |
 | `summary(got)` | Summary of the data                 |
-| `View(got)`    | View data in file viewer            |
 
-# Let's talk abut common data structures
-- Data types
-  - Integer
-  - Numeric
-  - Character
-  - Factor
-  - Logical
-- Data structures
-  - Vector
-  - Matrix
-  - Data frame (yes, no need to `import pandas as pd`)
-  - List
 
 # Power functions for tyding data (not base R)
-
 As we've mentioned before, R is an open source platform with a great community
 that is constantly working in collaboration to innovate by creating or maintaining
 R packages.
@@ -137,7 +222,8 @@ packageDescription("package")
 help(package = "package")
 ```
 
-`A repository` is a place where packages are located so you can install them from it. Typically they are online and accessible to everyone. The official R repository is
+`A repository` is a place where packages are located so you can install them from it.
+ Typically they are online and accessible to everyone. The official R repository is
 [CRAN](https://cran.r-project.org/)
 
 
@@ -170,7 +256,9 @@ To check what packages are installed on your computer, you can use:
 installed.packages()
 ```
 
-Once we installed the package from the repo to our local environment, we use the command `library()` to load a package from our computers to the specific project. Also, we use `data("package")` to explore the data sets installed with the package.
+Once we installed the package from the repo to our local environment, we use the command `library()`
+to load a package from our computers to the specific project.
+Also, we use `data("package")` to explore the data sets installed with the package.
 
 ```{r results="hide"}
 library(dplyr)
@@ -196,8 +284,15 @@ We can pass the output of one of these to another function to calculate the mean
 ```{r}
 mean(unlist(select(got, popularity)))
 ```
+`unlist` is used to get all the atomic components of the vector selected. Try:
 
-Notice how we *nested* one function inside another? There's another way to do this, a way that's more readable and easier to reason about. We can use the pipe operator, represented by the `%>%` symbol, to achieve the same thing.
+```{r}
+typeof(select(got, popularity))
+typeof(unlist(select(got, popularity)))
+ ```
+Notice how we *nested* one function inside another? There's another way to do this,
+a way that's more readable and easier to reason about. We can use the pipe operator,
+represented by the `%>%` symbol, to achieve the same thing.
 
 ```{r}
 got %>% select(popularity) %>% unlist() %>% mean()
@@ -241,7 +336,7 @@ We can see that data above the median is more dispersed. We can also notice
 several outliers at the higher extreme.
 
 We can pass in additional parameters to control the way our plot looks.
-You can read about them in the help section ``?boxplot`. Some of the frequently
+You can read about them in the help section `?boxplot`. Some of the frequently
 used ones are, main-to give the title, xlab and ylab-to provide labels for the axes,
 col to define color etc.
 Additionally, with the argument horizontal = TRUE we can plot it horizontally
