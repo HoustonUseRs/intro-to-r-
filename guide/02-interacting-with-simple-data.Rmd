@@ -73,7 +73,7 @@ To learn more about any function, we can add a `?` in front of the function name
 In order to know what file to read in, we need to give the function the location of the file:
 
 ```{r}
-read.csv(file = 'got.csv')
+read.csv(file = '../data/got.csv')
 ```
 
 RStudio reminds us what different functions are named as we start typing them into console, and reminds us what additional information each of those functions may need when we type the `(`.  It also automatically completes the function call for us with the `)`.
@@ -81,7 +81,7 @@ RStudio reminds us what different functions are named as we start typing them in
 When we read in the CSV, R printed the data out to us.  In order to really use the data though, we need to tell R to remember the data by assigning it to a variable.  We want to name our variables so that they're easy to remember and indicative of what information they are holding onto.
 
 ```{r}
-got <- read.csv(file = 'got.csv')
+got <- read.csv(file = '../data/got.csv')
 ```
 
 Now, when we ask R about `got`, we get the data back!
@@ -165,7 +165,7 @@ Unfortunately, most data loading functions in R automatically convert character 
 Instead, use the argument stringsAsFactors = FALSE to suppress this behaviour, and then manually convert character vectors to factors when need it.
 
 ```{r}
-got <- read.csv(file = 'got.csv', stringsAsFactors = FALSE)
+got <- read.csv(file = '../data/got.csv', stringsAsFactors = FALSE)
 ```
 ### Matrices and arrays
 Adding a dim attribute to an atomic vector allows it to behave like a multi-dimensional array.
