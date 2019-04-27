@@ -110,7 +110,7 @@ dimensionality and whether their contents are of the same type (homogeneous).
 | :------------- | :-------------| :---------------|
 | 1d             | Atomic Vector | List            |
 | 2d             | Matrix        | Data frame      |
-| 1d             | Array         |                 |
+| nd             | Array         |                 |
 
 ## Vectors
 The basic data structure in R is the vector and there are 2 type of vectors:
