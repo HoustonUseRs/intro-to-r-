@@ -42,7 +42,7 @@ Specifically, we will be:
 
 We will also cover how to get help and how to learn more about using R. Additionally, we’ve pulled together different resources for things we aren’t covering into our appendix.
 
-##  1.4 - Who to code and execute R - What is RStudio?
+##  1.4 - Where to code and execute R - What is RStudio?
 Today, we will be working with R in RStudio (an integrated development environment (IDE)).  While there are other programs we can use to write R, RStudio has become the standard environment for working with R.
 
 ![RStudio has four main windows: a file viewer, an interactive console, an environment viewer, and directory viewer.](./assets/rstudio.png)
