@@ -1,5 +1,5 @@
 # In the console
-setwd("C:/Users/Kenia.Way/OneDrive - IHS Markit/Documents/workshop/intro-to-r-")
+setwd("~/R/intro-to-R-2019/intro-to-r-")
 read.csv
 
 read.csv()
@@ -97,3 +97,19 @@ gotFiltered <- got %>% filter(house %in% c("Lannister", "Stark", "Targaryen"))
 boxplot(mean~gender, data=got_m, 
         col=(c("gold","darkgreen")),
         main="popularity vs gender", ylab="mean")
+
+# Some quick lm
+gotFiltered <- got %>% filter(!is.na(age)) %>% select(age, popularity)
+lm_got <- lm(popularity ~ age, gotFiltered)
+lm_got
+summary(lm_got)
+plot(popularity ~ age, gotFiltered)
+abline(lm_got)
+
+# ggplot
+library(ggplot2)
+gotFiltered %>%  ggplot(aes(x = age, y = popularity)) + 
+  geom_point() +
+  geom_smooth(method = "lm")
+
+# nope, no linear relationship here!

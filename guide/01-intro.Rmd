@@ -12,14 +12,15 @@ R is a programming language designed specifically for statistics by statistician
 
 ## 1.2 - Some limitations of R
 
-  - R requires data to be loaded into memory
-  For projects where exceptionally large data needs to be analyzed or processed very quickly, we will want to consider using tools that help us work around the memory limitations.
+  - R requires data to be loaded into memory.
+    - For projects where exceptionally large data needs to be analyzed or processed very quickly, we will want to consider using tools that help us work around the memory limitations.
 
-  -  R is limited in producing highly-customized and interactive reporting visualizations
-  While R is able to produce interactive graphics, maps, and dashboards, a lot of the more expressive and customized interactive data presentations will require knowledge of JavaScript.
+
+  -  R is limited in producing highly-customized and interactive reporting visualizations.
+    - While R is able to produce interactive graphics, maps, and dashboards, a lot of the more expressive and customized interactive data presentations will require knowledge of JavaScript.
 
   - R is not as expressive for general tasks such as scraping and crawling
-  R packages like tidyr and dplyr are making R more expressive; the result is R is becoming a strong competitor in more general tasks like data-mining, data-wrangling, and scraping and crawling for data.
+    - R packages like tidyr and dplyr are making R more expressive; the result is R is becoming a strong competitor in more general tasks like data-mining, data-wrangling, and scraping and crawling for data.
 
   - Lacks flexibility for production use, especially when the data analysis tasks need to be integrated with web applications.
 
