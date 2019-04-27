@@ -1,3 +1,802 @@
+"name","title","male","house","isMarried","isNoble","age","popularity","isAlive"
+"Walder Frey","Lord of the Crossing",1,"Frey",1,1,97,0.89632107,1
+"Addison Hill","Ser",1,"Swyft",0,1,NA,0.267558528,1
+"Aemma Arryn","Queen",0,"Arryn",1,1,23,0.183946488,0
+"Sylva Santagar","Greenstone",0,"Santagar",1,1,29,0.043478261,1
+"Valarr Targaryen","Hand of the King",1,"Targaryen",1,1,26,0.431438127,0
+"Wilbert Osgrey","Ser",1,"Osgrey",0,1,NA,0.02006689,1
+"Willem Wylde","Ser",1,"Wylde",0,1,NA,0.02006689,1
+"Willis Wode","Ser",1,"Wode",0,1,NA,0.02006689,1
+"Willis Fell","Ser",0,"Fell",0,1,NA,0.023411371,1
+"Timett","red hand",1,"Burned Men",0,1,27,0.073578595,1
+"Laenor Velaryon","Ser",1,"Velaryon",1,1,26,0.193979933,0
+"Leobald Tallhart","Castellan",1,"Tallhart",1,1,NA,0.110367893,0
+"Margaery Tyrell","Seven Kingdoms",0,"Tyrell",1,1,22,1,1
+"Naerys Targaryen","PrincessQueen",0,"Targaryen",1,1,100,0.220735786,0
+"Quellon Greyjoy","Lord of the Iron Islands",1,"Greyjoy",1,1,NA,0.090301003,0
+"Quentyn Blackwood","Lord",0,"Blackwood",0,1,NA,0.02006689,0
+"Quentin Tyrell","Ser",0,"Tyrell",0,1,NA,0.127090301,1
+"Raymar Royce","Lord",1,"Royce of the Gates of the Moon",0,1,NA,0.013377926,1
+"Raymond Nayland","Ser",0,"Nayland",0,1,NA,0.016722408,1
+"Red Lamb","Ser",1,"Targaryen",0,1,NA,0,1
+"Reynard Webber","Lord of Coldmoat",0,"Webber",0,1,NA,0.006688963,1
+"Rhaegel Targaryen","Prince of Dragonstone",1,"Targaryen",1,1,42,0.096989967,0
+"Rhaena Targaryen (daughter of Daemon)","Lady",0,"Targaryen",1,1,100,0.143812709,0
+"Rhaena Targaryen (daughter of Aegon III)","PrincessSepta",0,"Targaryen",0,1,100,0.073578595,0
+"Rhaenys Targaryen","Queen",0,"Targaryen",1,1,35,0.277591973,0
+"Rhaenys Targaryen (daughter of Rhaegar)","Princess",0,"Targaryen",0,1,3,0.244147157,0
+"Rhaenys Targaryen (daughter of Aemon)","Princess",0,"Targaryen",1,1,55,0.143812709,0
+"Richard Farrow","Ser",0,"Farrow",0,1,NA,0.016722408,0
+"Richard Lonmouth","Ser",1,"Lonmouth",0,1,NA,0.023411371,1
+"Robb Reyne","Ser",1,"Reyne",0,1,NA,0.006688963,1
+"Robert Ashford","Ser",1,"Ashford",0,1,NA,0.023411371,1
+"Robert Paege","Ser",0,"Paege",0,1,NA,0.010033445,1
+"Roelle","Septa",0,"Tarth",0,0,NA,0,1
+"Roland Crakehall (Kingsguard)","Ser",1,"Crakehall",0,1,NA,0.02006689,1
+"Rolland Darklyn","Ser",1,"Darklyn",0,1,NA,0.010033445,1
+"Rupert Crabb","Ser",0,"Crabb",0,1,NA,0.006688963,1
+"Samwell Spicer","Ser",1,"Spicer",0,1,NA,0.013377926,1
+"Sefton Staunton","Septon",1,"Staunton",0,0,NA,0.030100334,1
+"Simon Leygood","Ser",0,"Leygood",0,1,NA,0.003344482,1
+"Stafford Lannister","Ser",1,"Lannister",1,1,53,0.170568562,0
+"Steffon Fossoway","Ser",1,"Fossoway of Cider Hall",0,1,NA,0.040133779,1
+"Steffon Hollard","Ser",0,"Hollard",0,1,NA,0.026755853,1
+"Steffon Varner","Lord",1,"Varner",0,1,NA,0.013377926,1
+"Theo Frey","Ser",1,"Frey",0,1,NA,0.013377926,1
+"Tom Costayne","Ser",0,"Costayne",0,1,NA,0.006688963,1
+"Tommard Heddle","Ser",1,"Heddle",0,1,NA,0.046822742,0
+"Tristimun","Ser",1,"Sea watch",0,1,NA,0,1
+"Utt","Septon",1,"Brave Companions",0,0,NA,0.023411371,0
+"Victor Tyrell","Ser",0,"Tyrell",0,1,NA,0.123745819,1
+"Wendell Webber","Ser",1,"Webber",0,1,NA,0.013377926,1
+"Jhogo","Bloodrider",0,"Targaryen",0,0,24,0.200668896,1
+"Tanda Stokeworth","Stokeworth",0,"Stokeworth",0,1,NA,0.113712375,0
+"Abelar Hightower","Ser",1,"Hightower",0,1,NA,0,1
+"Addam Frey","Ser",1,"Frey",0,1,NA,0.026755853,1
+"Aegon Targaryen (son of Baelon)","Prince",1,"Targaryen",0,1,NA,0,1
+"Aegon Targaryen (son of Jaehaerys I)","Prince",0,"Targaryen",0,1,100,0,0
+"Aegon Targaryen (son of Aenys I)","Prince",1,"Targaryen",1,1,17,0,0
+"Alicent Hightower","LadyQueenDowager Queen",0,"Hightower",1,1,45,0.267558528,0
+"Alyn Hunt","Ser",1,"Hunt",0,1,NA,0.013377926,1
+"Alyn Velaryon","Lord of the Tides",1,"Velaryon",1,1,56,0.160535117,0
+"Andrey Dalt","Ser",0,"Dalt",0,1,NA,0.036789298,1
+"Andrey Charlton","Ser",1,"Charlton",0,1,NA,0.013377926,0
+"Argrave the Defiant","Ser",1,"Butterwell",0,1,NA,0.013377926,1
+"Arnell","Ser",1,"Night's Watch",0,1,NA,0.006688963,1
+"Arron Qorgyle","Ser",1,"Qorgyle",0,1,NA,0.023411371,1
+"Aubrey Ambrose","Ser",1,"Ambrose",0,1,NA,0.006688963,1
+"Baelon Targaryen (son of Viserys I)","Prince",1,"Targaryen",0,1,0,0.100334448,0
+"Baelon Targaryen (son of Aerys)","Lord of Dragonstone",0,"Targaryen",0,1,NA,0.043478261,1
+"Baelor Targaryen (son of Daeron II)","Prince of Dragonstone",1,"Targaryen",1,1,39,0.474916388,0
+"Belis","Wisdom",1,"Alchemists' Guild",0,1,NA,0.02006689,1
+"Ben Bushy","Ser",0,"Bushy",0,1,NA,0.023411371,0
+"Bennis","Ser",1,"Osgrey",0,1,NA,0.036789298,1
+"Bertram Beesbury","Ser",1,"Beesbury",0,1,NA,0.003344482,1
+"Brandon Stark (Bad)","King in the North",1,"Stark",0,1,NA,0.016722408,1
+"Brandon Stark (the daughterless)","Winterfell",1,"Stark",0,1,NA,0.033444816,1
+"Brandon Stark (son of Cregan)","Winterfell",1,"Stark",1,1,NA,0.143812709,1
+"Brenett","Maester",1,"Frey",0,1,NA,0.003344482,1
+"Buford Bulwer","Ser",1,"Bulwer",0,1,NA,0.016722408,1
+"Byam Flint","Ser",1,"Night's Watch",0,1,NA,0.02006689,0
+"Byron","Ser",0,"Baelish",0,1,NA,0.02006689,1
+"Lord Cafferen","Lord",1,"Cafferen",0,1,NA,0.02006689,0
+"Cadwyn","Ser",0,"Lannister",0,1,NA,0,1
+"Cedric Payne","Ser",1,"Payne",0,1,NA,0.013377926,0
+"Cerrick","Maester",1,"Webber",0,1,NA,0.006688963,1
+"Catelyn Stark","Winterfell",0,"Tully",1,1,35,0,0
+"Clarence Crabb","Ser",1,"Crabb",0,1,NA,0.026755853,1
+"Clarence Charlton","Ser",0,"Charlton",0,1,NA,0.013377926,1
+"Clarence Crabb (Short)","Ser",1,"Crabb",0,1,NA,0.006688963,1
+"Cleyton Caswell","Ser",0,"Caswell",0,1,NA,0.003344482,1
+"Clifford Conklyn","Ser",1,"Conklyn",0,1,NA,0.006688963,1
+"Colen of Greenpools","Ser",1,"Baratheon",0,1,NA,0.016722408,1
+"Cosgrove","Steward",0,"Butterwell",0,1,NA,0,1
+"Courtenay Greenhill","Ser",0,"Greenhill",0,1,NA,0,1
+"Daella Targaryen (daughter of Jaehaerys I)","Eyrie",0,"Targaryen",1,1,28,0.086956522,0
+"Daella Targaryen (daughter of Maekar I)","Princess",1,"Targaryen",0,1,100,0.080267559,0
+"Daenerys Targaryen (daughter of Aegon IV)","Princess",0,"Targaryen",1,1,100,0.093645485,0
+"Daena Targaryen","Princess",0,"Targaryen",1,1,100,0.227424749,0
+"Daeron Targaryen (son of Viserys I)","Ser",1,"Targaryen",0,1,16,0.227424749,0
+"Daeron Targaryen (son of Maekar I)","Prince of Dragonstone",1,"Targaryen",1,1,31,0.130434783,0
+"Damon Lannister (lord)","Casterly Rock",1,"Lannister",1,1,NA,0,0
+"Darla Deddings","Lady",0,"Deddings",0,1,NA,0.010033445,1
+"Dennis Plumm","Ser",1,"Plumm",0,1,NA,0.026755853,1
+"Donella Hornwood","Hornwood",0,"Manderly",1,1,50,0.096989967,0
+"Dunaver","Ser",0,"Lannister",0,1,NA,0.006688963,1
+"Duncan Targaryen","Prince of Dragonstone",1,"Targaryen",1,1,39,0.140468227,0
+"Edgerran Oakheart","Lord",1,"Oakheart",0,1,NA,0.006688963,1
+"Eden Risley","Ser",1,"Risley",0,1,NA,0.003344482,1
+"Edmund Ambrose","Ser",0,"Ambrose",0,1,NA,0.023411371,1
+"Edwyn Osgrey","Ser",1,"Osgrey",0,1,NA,0.02006689,0
+"Eglantine","Septa",0,"Faith of the Seven",0,0,NA,0.006688963,1
+"Elaena Targaryen","Princess",0,"Targaryen",1,1,70,0.137123746,0
+"Elys Westerling","Ser",0,"Westerling",0,1,NA,0.013377926,1
+"Elys Waynwood","Ser",0,"Waynwood",1,1,NA,0.070234114,1
+"Erik Ironmaker","Lord Steward of the Iron Islands",1,"Ironmaker",1,1,94,0.050167224,1
+"Eustace (Braavos)","Septon",0,"Faith of the Seven",0,0,NA,0.010033445,1
+"Eustace (Dance of the Dragons)","Septon",1,"Faith of the Seven",0,0,NA,0.036789298,1
+"Ezzelyno","Red Priest",0,"R'hllor",0,1,NA,0.013377926,1
+"Garigus","Wisdom",1,"Alchemists' Guild",0,1,NA,0.02006689,1
+"Gascoyne","Ser",0,"Martell",0,1,NA,0.013377926,1
+"Gerold Lannister","Casterly Rock",1,"Lannister",1,1,NA,0.086956522,0
+"Gladden Wylde","Ser",1,"Wylde",0,1,NA,0.016722408,0
+"Grance Morrigen","Ser",1,"Morrigen",0,1,NA,0.010033445,1
+"Gulian Qorgyle","Ser",1,"Qorgyle",0,1,NA,0.013377926,1
+"Gwayne Corbray","Ser",1,"Corbray",0,1,NA,0.043478261,1
+"Gwayne Gaunt","Ser",0,"Gaunt",0,1,NA,0.036789298,1
+"Gyles","Ser",0,"Kingsguard",0,1,NA,0.003344482,1
+"Harbert Paege","Ser",0,"Paege",0,1,NA,0.013377926,1
+"Halys Hornwood","Hornwood",1,"Hornwood",1,1,NA,0.107023411,0
+"Harlan Grandison","Ser",1,"Grandison",0,1,NA,0.016722408,0
+"Harrold Osgrey","Ser",1,"Osgrey",0,1,NA,0.023411371,1
+"Harry Sawyer","Ser",0,"Sawyer",0,1,NA,0.016722408,1
+"Harwyn Plumm","Ser",1,"Plumm",0,1,NA,0.046822742,1
+"Herbert Bolling","Ser",0,"Bolling",0,1,NA,0.010033445,1
+"Hugh Beesbury","Ser",0,"Beesbury",0,1,NA,0.013377926,1
+"Humfrey Clifton","Ser",1,"Clifton",0,1,NA,0.013377926,1
+"Jaehaerys Targaryen (son of Aegon II)","Prince",1,"Targaryen",0,1,6,0.18729097,0
+"Jaehaera Targaryen","PrincessQueen",0,"Targaryen",1,1,10,0.280936455,0
+"Jeffory Norcross","Ser",1,"Norcross",0,1,NA,0.006688963,1
+"Jeyne Westerling (wife of Maegor I)","QueenBlack Bride",0,"Westerling",1,1,20,0.110367893,0
+"Jeyne Westerling","Winterfell",0,"Westerling",1,1,22,0.424749164,1
+"Joanna Lannister","Casterly Rock",0,"Lannister",1,1,28,0.230769231,0
+"Jon Cupps","Ser",1,"Cupps",1,1,NA,0.050167224,1
+"Jon Heddle","Ser",1,"Heddle",0,1,NA,0.006688963,1
+"Jon Hollard","Ser",1,"Hollard",0,1,NA,0.026755853,1
+"Jon Penrose","Ser",1,"Penrose",0,1,NA,0.016722408,1
+"Jon Umber (Greatjon)","Last Hearth",1,"Umber",0,1,NA,0.183946488,1
+"Jorquen","Septon",1,"Night's Watch",0,0,NA,0.003344482,1
+"Joseth Mallister","Ser",0,"Mallister",0,1,NA,0.013377926,1
+"Leo Tyrell (Longthorn)","Lord Paramount of the Mander",1,"Tyrell",0,1,NA,0.053511706,1
+"Leo Tyrell (son of Victor)","Ser",1,"Tyrell",1,1,NA,0.130434783,1
+"Lorent Lorch","Ser",0,"Lorch",0,1,NA,0.010033445,1
+"Lorimer","Ser",1,"Lefford",0,1,NA,0.013377926,0
+"Lucamore Strong","Ser",1,"Strong",0,1,NA,0.016722408,1
+"Lucas Nayland","Ser",0,"Nayland",0,1,NA,0.003344482,1
+"Lucifer Hardy","Lord",1,"Hardy",0,1,NA,0.006688963,1
+"Luthor Tyrell (son of Moryn)","Ser",0,"Tyrell",1,1,NA,0.130434783,1
+"Lymond Mallister","Seagard",0,"Mallister",0,1,NA,0.013377926,1
+"Lyonel (knight)","Ser",1,"Lannister",0,1,NA,0.013377926,1
+"Lyonel Bentley","Ser",0,"Queensguard",0,1,NA,0.013377926,0
+"Lyonel Tyrell (lord)","Lord Paramount of the Mander",1,"Tyrell",0,1,NA,0.02006689,0
+"Malliard","Wisdom",1,"Alchemists' Guild",0,1,NA,0.006688963,1
+"Manfred Dondarrion","Ser",1,"Dondarrion",0,1,NA,0.010033445,1
+"Manfred Swann","Ser",0,"Swann",0,1,NA,0.016722408,1
+"Manfryd Yew","Ser",0,"Yew",0,1,NA,0.02006689,1
+"Martyn Mullendore","Uplands",0,"Mullendore",0,1,NA,0.006688963,1
+"Maynard Plumm","Ser",1,"Plumm",0,1,NA,0.023411371,1
+"Michael Mertyns","Ser",1,"Mertyns",0,1,NA,0.006688963,1
+"Morgarth","Ser",1,"Baelish",0,1,NA,0.016722408,1
+"Mortimer Boggs","Ser",1,"Boggs",0,1,NA,0.013377926,1
+"Munciter","Wisdom",1,"Alchemists' Guild",0,1,NA,0.006688963,1
+"Olyvar Oakheart","Ser",1,"Oakheart",0,1,NA,0.023411371,0
+"Orivel","Ser",1,"Kingsguard",0,1,NA,0.003344482,1
+"Ormond Osgrey","Coldmoat",0,"Osgrey",0,1,NA,0.010033445,1
+"Ormond Westerling","Ser",0,"Westerling",0,1,NA,0,1
+"Ormund Wylde","Ser",1,"Wylde",0,1,NA,0.013377926,1
+"Osmynd","Septon",0,"Faith of the Seven",0,0,NA,0.003344482,1
+"Owen Inchfield","Ser",0,"Inchfield",0,1,NA,0.013377926,1
+"Perwyn Osgrey","Coldmoat",0,"Osgrey",0,1,NA,0.006688963,1
+"Peter Plumm","Ser",1,"Plumm",0,1,NA,0.026755853,1
+"Plummer","Ashford",0,"Ashford",0,1,NA,0,1
+"Pollitor","Wisdom",1,"Alchemists' Guild",0,1,NA,0.010033445,1
+"Qalen","Maester",1,"Greyjoy",0,1,NA,0.010033445,1
+"Qarl Correy","Ser",1,"Velaryon",0,1,NA,0.026755853,1
+"Aelinor Penrose","LadyQueen",0,"Penrose",1,1,NA,0.163879599,1
+"Aemon Estermont","Ser",1,"Estermont",0,1,NA,0.030100334,1
+"Aemon Rivers","Ser",1,"Frey",0,1,NA,0.033444816,1
+"Aglantine","Septa",0,"Faith of the Seven",0,0,NA,0.013377926,1
+"Aladale Wynch","Ser",1,"Wynch",0,1,NA,0.02006689,0
+"Albar Royce","Ser",1,"Royce of the Gates of the Moon",0,1,NA,0.033444816,1
+"Alesander Staedmon","Broad Arch",0,"Staedmon",0,1,NA,0.013377926,1
+"Alekyne Florent","Brightwater",1,"Florent",0,1,NA,0.066889632,1
+"Allard Seaworth","Lady Marya",1,"Seaworth",0,1,NA,0.063545151,0
+"Alyn Cockshaw","Lord",1,"Cockshaw",0,1,NA,0.040133779,0
+"Alyce Graceford","Lady",0,"Graceford",0,1,NA,0.023411371,1
+"Alyn Connington","Ser",0,"Connington",0,1,NA,0.060200669,1
+"Alyn Estermont","Ser",1,"Estermont",0,1,NA,0.026755853,1
+"Alyn Stackspear","Ser",0,"Stackspear",0,1,NA,0.026755853,1
+"Alysanne Bulwer","Blackcrown",0,"Bulwer",0,1,14,0.153846154,1
+"Alysanne Lefford","Golden Tooth",0,"Lefford",0,1,NA,0.013377926,1
+"Alyssa Blackwood","Lady",0,"Blackwood",1,1,NA,0.096989967,0
+"Ambrose Butterwell","Whitewalls",1,"Butterwell",1,1,100,0.414715719,0
+"Andar Royce","Ser",1,"Royce",0,1,NA,0.040133779,1
+"Andros Brax","Hornvale",1,"Brax",0,1,NA,0.053511706,0
+"Antario Jast","Lord",1,"Jast",1,1,NA,0.080267559,1
+"Andrew Estermont","Ser",1,"Estermont",0,1,NA,0.036789298,1
+"Annara Farring","Lady",0,"Farring",1,1,NA,0.063545151,1
+"Ardrian Celtigar","Claw Isle",1,"Celtigar",0,1,76,0.043478261,1
+"Anya Waynwood","Ironoaks",0,"Waynwood",0,1,NA,0.086956522,1
+"Armond Caswell","Bitterbridge",1,"Caswell",0,1,NA,0.006688963,1
+"Arthur Ambrose","Lord",1,"Ambrose",1,1,NA,0.060200669,1
+"Arwood Frey","Ser",1,"Frey",1,1,42,0.163879599,1
+"Lord Ashford","Ashford",1,"Ashford",0,1,NA,0.010033445,1
+"Azzak","Cupbearer",0,"of Ghazeen",0,1,NA,0.016722408,1
+"Baelor Hightower","Ser",1,"Hightower",1,1,NA,0.066889632,1
+"Balman Byrch","Ser",1,"Byrch",1,1,NA,0.073578595,0
+"Barth","Septon",1,"Faith of the Seven",0,0,NA,0.35451505,0
+"Bayard Norcross","Ser",0,"Norcross",0,1,NA,0.02006689,1
+"Barthogan Stark","Winterfell",1,"Stark",0,1,NA,0.127090301,1
+"Benedar Belmore","Strongsong",1,"Belmore",0,1,NA,0.026755853,1
+"Benedict Broom","Ser",0,"Broom",0,1,NA,0.02006689,1
+"Bennard Brune","Ser",1,"Brune of Brownhollow",0,1,NA,0.010033445,1
+"Benfrey Frey","Ser",1,"Frey",1,1,28,0.073578595,0
+"Beron Stark","Winterfell",1,"Stark",1,1,NA,0.234113712,1
+"Bhakaz zo Loraq","Cupbearer",1,"of Loraq",0,1,NA,0.003344482,1
+"Bethany Redwyne","Goldengrove",0,"Redwyne",1,1,NA,0.060200669,1
+"Bethany Rosby","Lady",0,"Rosby",1,1,17,0.066889632,0
+"Boremund Harlaw","Harridan Hill",1,"Harlaw of Harridan Hill",0,1,NA,0.063545151,1
+"Branston Cuy","Lord of Sunflower Hall",0,"Cuy",0,1,NA,0.006688963,1
+"Bryan Fossoway","Ser",1,"Fossoway of Cider Hall",0,1,NA,0.026755853,0
+"Bryen Caron","Lord of the Marches",1,"Caron",0,1,NA,0.026755853,0
+"Burton Crakehall","Ser",1,"Crakehall",0,1,NA,0.036789298,0
+"Lord Caswell","Bitterbridge",1,"Caswell",0,1,NA,0.013377926,1
+"Clarent Crakehall","Ser",0,"Crakehall",0,1,NA,0.010033445,0
+"Clement Crabb","Ser",1,"Crabb",0,1,NA,0.013377926,1
+"Clement Piper","Pinkmaiden",1,"Piper",0,1,NA,0.070234114,1
+"Cley Cerwyn","Cerwyn",1,"Cerwyn",0,1,15,0.073578595,0
+"Colin Florent","Ser",0,"Florent",0,1,NA,0.08361204,1
+"Corliss Penny","Ser",0,"Penny",0,1,NA,0.023411371,1
+"Creighton Redfort","Ser",0,"Redfort",0,1,NA,0.023411371,1
+"Cregan Stark","Winterfell",1,"Stark",1,1,NA,0.484949833,0
+"Daeron Vaith","Lord of the Red Dunes",0,"Vaith",0,1,NA,0.010033445,1
+"Dafyn Vance","Ser",0,"Vance",1,1,NA,0.10367893,1
+"Dagon Greyjoy","Lord Reaper of Pyke",1,"Greyjoy",0,1,NA,0.073578595,1
+"Damon Paege","Ser",1,"Paege",0,1,NA,0.02006689,1
+"Damon Shett","Ser",0,"Shett of Gull Tower",0,1,NA,0.010033445,1
+"Damon Vypren","Ser",0,"Vypren",0,1,40,0.157190635,1
+"Danwell Frey","Ser",1,"Frey",1,1,53,0.180602007,1
+"Delonne Allyrion","Godsgrace",0,"Allyrion",0,1,NA,0.026755853,1
+"Denys Darklyn","Duskendale",1,"Darklyn",1,1,NA,0.056856187,1
+"Denys Arryn","Ser",0,"Arryn",0,1,NA,0.08361204,0
+"Dermot","Ser",0,"Baratheon of Dragonstone",0,1,NA,0.023411371,1
+"Desmond Redwyne","Ser",1,"Redwyne",1,1,NA,0.076923077,1
+"Deziel Dalt","Knight",1,"Dalt",0,1,NA,0.026755853,1
+"Donnel Haigh","Ser",1,"Haigh",0,1,50,0.086956522,1
+"Donnel of Duskendale","Ser",1,"Kingsguard",0,1,NA,0.036789298,1
+"Donnel Locke","Ser",0,"Locke",0,1,NA,0.036789298,0
+"Donnel Waynwood","Ser",0,"Waynwood",0,1,28,0.060200669,1
+"Donnor Stark","Winterfell",1,"Stark",0,1,NA,0.080267559,1
+"Duram Bar Emmon","Sharp Point",0,"Bar Emmon",0,1,21,0.026755853,1
+"Edderion Stark","King in the North",1,"Stark",0,1,NA,0.010033445,1
+"Edmyn Tully","Riverrun",1,"Tully",0,1,NA,0.357859532,1
+"Eddara Tallhart","Lady of Torrhen's Square",0,"Tallhart",0,1,16,0.040133779,1
+"Edrick Stark","King in the North",1,"Stark",0,1,NA,0.026755853,1
+"Edwyd Fossoway","Ser",1,"Fossoway of Cider Hall",0,1,NA,0.023411371,0
+"Edwyn Stark","King in the North",0,"Stark",0,1,NA,0.010033445,1
+"Edwyle Stark","Winterfell",1,"Stark",1,1,NA,0.107023411,1
+"Elder Brother","Ser",1,"Faith of the Seven",0,1,50,0.076923077,1
+"Elbert Arryn","Ser",1,"Arryn",0,1,NA,0.046822742,0
+"Ellery Vance","Ser",1,"Vance of Atranta",0,1,NA,0.026755853,1
+"Elwood Meadows","Grassy Vale",1,"Meadows",0,1,27,0.050167224,1
+"Endrew Tarth","Ser",1,"Tarth",0,1,NA,0.066889632,0
+"Eon Hunter","Longbow Hall",1,"Hunter",0,1,NA,0.046822742,0
+"Ermesande Hayford","Hayford",0,"Hayford",1,1,7,0.113712375,1
+"Erren Florent","Ser",1,"Florent",0,1,NA,0.086956522,1
+"Eustace Brune","Dyre Den",1,"Brune of the Dyre Den",0,1,NA,0.016722408,1
+"Eustace Hunter","Ser",0,"Hunter",0,1,NA,0.023411371,1
+"Eyron Stark","King in the North",1,"Stark",0,1,NA,0.010033445,1
+"Forley Prester","Ser",1,"Prester",0,1,NA,0.063545151,1
+"Franklyn Fowler","Skyreach",1,"Fowler",0,1,NA,0.02006689,1
+"Flement Brax","Ser",1,"Brax",1,1,NA,0.140468227,1
+"Franklyn Frey","Ser",1,"Frey",0,1,NA,0.036789298,1
+"Gareth Clifton","Ser",1,"Clifton",1,1,NA,0.013377926,1
+"Garrison Prester","Feastfires",1,"Prester",0,1,NA,0.013377926,1
+"Garse Goodbrook","Ser",1,"Goodbrook",1,1,NA,0.066889632,1
+"Garth Greenfield","Knight",0,"Greenfield",0,1,NA,0.030100334,1
+"Gawen Swann","Stonehelm",1,"Swann",0,1,100,0.016722408,0
+"Gawen Wylde","Ser",1,"Wylde",0,1,NA,0.013377926,0
+"Garth Tyrell","Lord Seneschal",1,"Tyrell",0,1,NA,0.163879599,1
+"Gawen Westerling","Crag",1,"Westerling",1,1,NA,0.08361204,1
+"Gerald Gower","Ser",0,"Gower",0,1,NA,0.023411371,1
+"Gerold Grafton","Gulltown",1,"Grafton",0,1,NA,0.023411371,1
+"Gerardys","Grand Maester",1,"Blacks",0,1,NA,0.023411371,0
+"Gilbert Farring","Ser",1,"Farring",0,1,NA,0.046822742,1
+"Glendon Hewett","Ser",1,"Hewett",0,1,NA,0.026755853,1
+"Gilwood Hunter","Ser",1,"Hunter",0,1,55,0.040133779,1
+"Godric Borrell","Sweetsister",1,"Borrell",0,1,NA,0.086956522,1
+"Goodwin","Ser",1,"Tarth",0,1,NA,0.006688963,1
+"Gormon Peake","Starpike",1,"Peake",0,1,NA,0.060200669,0
+"Gormon Tyrell","Maester",1,"Citadel",0,1,NA,0.153846154,1
+"Grazdan mo Ullhor","Good Master",1,"Good Masters",0,1,NA,0.030100334,0
+"Grazdar zo Galare","Cupbearer",1,"of Galare",0,1,NA,0.010033445,1
+"Guncer Sunglass","Sweetport Sound",1,"Sunglass",0,1,NA,0.040133779,0
+"Gulian Swann","Stonehelm",1,"Swann",0,1,46,0.033444816,1
+"Guthor Grimm","Lord of Greyshield",1,"Grimm",0,1,NA,0.016722408,1
+"Gunthor Hightower","Ser",0,"Hightower",1,1,NA,0.053511706,1
+"Gyldayn","Archmaester",1,"The Citadel",0,1,NA,0.157190635,1
+"Gwayne Hightower","Ser",1,"Hightower",0,1,42,0.050167224,0
+"Hallis Mollen","Winterfell",1,"Mollen",0,1,NA,0.070234114,1
+"Halmon Paege","Ser",1,"Paege",0,1,NA,0.016722408,1
+"Harbert","Ser",1,"Baratheon",0,1,NA,0.023411371,1
+"Harlan Hunter","Ser",1,"Hunter",0,1,NA,0.026755853,1
+"Harlen Tyrell","High Steward of Highgarden",1,"Tyrell",0,1,NA,0.063545151,0
+"Harmond Umber","Last Hearth",0,"Umber",0,1,NA,0.016722408,1
+"Harmune","Maester",1,"Night's Watch",0,1,NA,0.043478261,1
+"Harrold Westerling","Ser",1,"Westerling",0,1,NA,0.27090301,0
+"Harwood Fell","Felwood",1,"Fell",0,1,NA,0.030100334,0
+"Harwin Strong","Ser",1,"Strong",0,1,30,0.086956522,0
+"Harwood Stout","Goldgrass",1,"Stout",0,1,NA,0.053511706,1
+"Harys Haigh","Ser",1,"Haigh",0,1,51,0.090301003,1
+"Helman Tallhart","Ser",1,"Tallhart",0,1,NA,0.130434783,0
+"Lord Commander Hoare","Lord Commander of the Night's Watch",1,"Hoare",0,1,NA,0.060200669,1
+"Hobber Redwyne","Ser",1,"Redwyne",0,1,NA,0.214046823,1
+"Hoarfrost Umber","Last Hearth",1,"Umber",0,1,NA,0.02006689,1
+"Hosman Norcross","Ser",1,"Norcross",1,1,NA,0.076923077,1
+"Horas Redwyne","Ser",1,"Redwyne",0,1,NA,0.217391304,1
+"Hubard Rambton","Ser",1,"Rambton",0,1,NA,0.02006689,0
+"Horton Redfort","Redfort",1,"Redfort",0,1,NA,0.046822742,1
+"Hotho Harlaw","Tower of Glimmering",1,"Harlaw of the Tower of Glimmering",0,1,NA,0.076923077,1
+"Hugo Wull","Big BucketThe Wull",1,"Wull",0,1,NA,0.036789298,1
+"Hugo Vance","Ser",1,"Vance of Atranta",0,1,NA,0.026755853,1
+"Hullen","Winterfell",1,"Stark",0,1,NA,0.060200669,0
+"Humfrey Beesbury","Ser",1,"Beesbury",0,1,NA,0.026755853,0
+"Humfrey Hardyng","Ser",1,"Hardyng",0,1,NA,0.053511706,0
+"Humfrey Swyft","Ser",0,"Swyft",0,1,NA,0.010033445,1
+"Humfrey Wagstaff","Ser",0,"Wagstaff",0,1,75,0.016722408,1
+"Jammos Frey","Ser",1,"Frey",1,1,39,0.090301003,1
+"Jaremy Rykker","First Ranger",1,"Night's Watch",0,1,NA,0.060200669,0
+"Jason Lannister","Ser",1,"Lannister",1,1,NA,0.046822742,0
+"Jasper Arryn","Eyrie",1,"Arryn",0,1,NA,0.043478261,1
+"Jasper Redfort","Ser",0,"Redfort",0,1,NA,0.023411371,1
+"Jeyne Arryn","Eyrie",0,"Arryn",0,1,NA,0.033444816,0
+"Joffrey Lonmouth","Ser",1,"Lonmouth",0,1,15,0.023411371,0
+"Joffrey Caswell","Bitterbridge",1,"Caswell",0,1,100,0.023411371,0
+"Jon Bettley","Ser",0,"Bettley",0,1,NA,0.016722408,1
+"Jon Lynderly","Lord of the Snakewood",0,"Lynderly",0,1,NA,0.023411371,1
+"Jon Redfort","Ser",0,"Redfort",0,1,NA,0.023411371,1
+"Jon Wylde","Ser",1,"Wylde",1,1,NA,0.160535117,1
+"Jonos Stark","King in the North",1,"Stark",0,1,NA,0.010033445,1
+"Jonnel Stark","Winterfell",1,"Stark",1,1,NA,0.127090301,1
+"Jorah Stark","King in the North",1,"Stark",0,1,NA,0.010033445,1
+"Jonothor Darry","Ser",1,"Darry",0,1,NA,0.046822742,0
+"Karlon Stark","Karl's Hold",1,"Stark",0,1,NA,0.016722408,1
+"Kennos of Kayce","Ser",1,"Kenning of Kayce",0,1,NA,0.033444816,1
+"Kezmya","Cupbearer",0,"of Pahl",0,1,NA,0.016722408,1
+"Lambert Turnberry","Ser",1,"Turnberry",0,1,NA,0.016722408,1
+"Larra Blackmont","Blackmont",0,"Blackmont",0,1,NA,0.026755853,1
+"Leathers","Master-at-Arms",1,"Night's Watch",0,1,46,0.050167224,1
+"Leo Lefford","Golden Tooth",1,"Lefford",0,1,NA,0.056856187,0
+"Leo Blackbar","Ser",1,"Blackbar",1,1,NA,0.127090301,1
+"Leonette Fossoway","Lady",0,"Fossoway",1,1,NA,0.173913043,1
+"Lester Morrigen","Lord of Crows Nest",0,"Morrigen",0,1,NA,0.023411371,1
+"Lewys Lydden","Lord of the Deep Den",0,"Lydden",0,1,NA,0.036789298,1
+"Leslyn Haigh","Ser",0,"Haigh",1,1,NA,0.086956522,1
+"Lomas Estermont","Ser",0,"Estermont",0,1,NA,0.033444816,1
+"Lorent Marbrand","Ser",1,"Marbrand",0,1,NA,0.073578595,0
+"Lothar Mallery","Lord",0,"Mallery",0,1,NA,0.016722408,0
+"Lucas Corbray","Ser",0,"Corbray",0,1,NA,0.013377926,1
+"Luceon Frey","Septon",1,"Faith of the Seven",0,0,56,0.076923077,1
+"Lucias Vypren","Lord",1,"Vypren",1,1,NA,0.163879599,1
+"Lucos Chyttering","Lord",1,"Chyttering",0,1,22,0.02006689,1
+"Lucion Lannister","Ser",0,"Lannister",0,1,NA,0.066889632,1
+"Luthor Tyrell","Lord Paramount of the Mander",1,"Tyrell",1,1,NA,0.170568562,1
+"Lyessa Flint","Widow's Watch",0,"Flint of Widow's Watch",0,1,NA,0.036789298,1
+"Lyman Beesbury","Master of coin",1,"Beesbury",0,1,81,0.260869565,0
+"Lymond Goodbrook","Lord",1,"Goodbrook",0,1,NA,0.026755853,1
+"Lyman Darry","Lord of Darry",0,"Darry",0,1,9,0.056856187,0
+"Lymond Lychester","Castle Lychester",1,"Lychester",0,1,NA,0.023411371,1
+"Lymond Vikary","Ser",1,"Vikary",0,1,NA,0.026755853,1
+"Lyonel Selmy","Ser",1,"Selmy",0,1,NA,0.016722408,1
+"Cleos Frey","Ser",1,"Frey",1,1,41,0.247491639,0
+"Dontos Hollard","Ser",1,"Hollard",0,1,39,0.230769231,0
+"Dale Seaworth","Wraith",1,"Seaworth",0,1,NA,0.070234114,0
+"Denys Mallister","Ser",1,"Mallister",0,1,60,0.130434783,1
+"Hosteen Frey","Ser",1,"Frey",1,1,56,0.274247492,1
+"Lyonel Corbray","Heart's Home",1,"Corbray",0,1,45,0.080267559,1
+"Lyonel Frey","Ser",0,"Frey of Riverrun",1,1,46,0.063545151,1
+"Lyonel Strong","Harrenhal",1,"Strong",1,1,NA,0.334448161,0
+"Mallador Locke","Ser",1,"Night's Watch",0,1,NA,0.026755853,0
+"Manfrey Martell","Ser",0,"Martell",0,1,NA,0.023411371,1
+"Margot Lannister","Starpike",0,"Lannister",1,1,NA,0.02006689,1
+"Maric Seaworth","Oarmaster",1,"Seaworth",0,1,NA,0.063545151,0
+"Maron Martell","Prince of Dorne",1,"Martell",1,1,NA,0.036789298,1
+"Maron Volmark","Volmark",1,"Volmark",0,1,22,0.043478261,1
+"Marq Rankenfell","Lord Commander of the Night's Watch",1,"Night's Watch",0,1,NA,0.050167224,1
+"Matarys Targaryen","Prince",1,"Targaryen",0,1,25,0.100334448,0
+"Marwyn Belmore","Ser",1,"Belmore",0,1,NA,0.023411371,1
+"Medgar Tully","Lord Paramount of the Trident",1,"Tully",0,1,NA,0.016722408,0
+"Medger Cerwyn","Cerwyn",1,"Cerwyn",0,1,NA,0.063545151,0
+"Meldred Merlyn","Lord of Pebbleton",0,"Merlyn",0,1,NA,0.023411371,1
+"Melwyn Sarsfield","Ser",1,"Sarsfield",1,1,NA,0.030100334,1
+"Merlon Crakehall","Ser",1,"Crakehall",0,1,NA,0.026755853,1
+"Mezzara","Cupbearer",1,"of Merreq",0,1,NA,0.016722408,1
+"Moelle","Septa",0,"Faith of the Seven",0,0,NA,0.030100334,1
+"Monterys Velaryon","Lord of the Tides",1,"Velaryon",0,1,12,0.02006689,1
+"Monford Velaryon","Lord of the Tides",1,"Velaryon",0,1,NA,0.023411371,0
+"Moribald Chester","Greenshield",0,"Chester",0,1,NA,0.02006689,1
+"Morton Waynwood","Ser",1,"Waynwood",0,1,NA,0.036789298,1
+"Morya Frey","Lady",0,"Frey",1,1,37,0.120401338,1
+"Mullin","Maester",0,"Night's Watch",0,1,NA,0.023411371,1
+"Murmison","Septon",1,"Faith of the Seven",0,0,NA,0.314381271,0
+"Myles Smallwood","Hand of the King",1,"Smallwood",0,1,NA,0.16722408,1
+"Myles Mooton","Ser",1,"Mooton",0,1,NA,0.026755853,0
+"Myles Manwoody","Ser",1,"Manwoody",0,1,NA,0.026755853,1
+"Norne Goodbrother","Shatterstone",0,"Goodbrother of Shatterstone",0,1,NA,0.02006689,1
+"Norbert Vance","Lord of Atranta",1,"Vance of Atranta",0,1,NA,0.036789298,1
+"Nymella Toland","Ghost Hill",0,"Toland",0,1,NA,0.043478261,1
+"Ollidor","Septon",1,"Faith of the Seven",0,0,NA,0.016722408,1
+"Olymer Tyrell","Ser",1,"Tyrell",1,1,NA,0.130434783,1
+"Ondrew Locke","Lord of Oldcastle",1,"Locke",0,1,NA,0.036789298,1
+"Orbert Caswell","Lord Commander of the Night's Watch",1,"Caswell",0,1,NA,0.056856187,0
+"Ormond Yronwood","Yronwood",0,"Yronwood",0,1,NA,0,1
+"Osbert Serry","Lord of Southshield",0,"Serry",0,1,NA,0.026755853,1
+"Ossifer Plumm","Lord",1,"Plumm",1,1,NA,0.086956522,0
+"Otho Bracken","Ser",1,"Bracken",0,1,NA,0.026755853,1
+"Ottyn Wythers","Ser",0,"Wythers",0,1,69,0.043478261,0
+"Pate of the Blue Fork","Ser",1,"Frey",1,1,NA,0.170568562,0
+"Perwyn Frey","Ser",1,"Frey",0,1,36,0.08361204,1
+"Philip Foote","Ser",1,"Foote",0,1,NA,0.050167224,1
+"Philip Plumm","Lord",1,"Plumm",0,1,NA,0.030100334,1
+"Qarlton Chelsted","Master of Coin",1,"Chelsted",0,1,NA,0.357859532,0
+"Lord Commander Qorgyle","Lord Commander of the Night's Watch",1,"Qorgyle",0,1,NA,0.066889632,0
+"Quenten Banefort","Banefort",1,"Banefort",0,1,NA,0.023411371,1
+"Quenton Hightower","Hightower",1,"Hightower",0,1,NA,0.006688963,1
+"Quentyn Ball","Ser",1,"Ball",0,1,NA,0.066889632,0
+"Quentyn Qorgyle","Sandstone",0,"Qorgyle",0,1,NA,0.023411371,1
+"Quincy Cox","Serthe Knight of Saltpans",1,"Cox",0,1,NA,0.033444816,1
+"Ralf Kenning","CastellanCommander",1,"Kenning of Harlaw",0,1,NA,0.046822742,0
+"Raynard","Septon",1,"Faith of the Seven",0,0,NA,0.02006689,1
+"Raynald Westerling","Ser",1,"Westerling",0,1,NA,0.070234114,0
+"Raynard Ruttiger","Ser",0,"Ruttiger",0,1,NA,0.02006689,1
+"Raymund Frey","Ser",1,"Frey",1,1,41,0.177257525,1
+"Regenard Estren","Wyndhall",0,"Estren",0,1,NA,0.02006689,1
+"Renfred Rykker","Duskendale",1,"Rykker",0,1,NA,0.023411371,1
+"Rhea Royce","Runestone",0,"Royce",1,1,NA,0.093645485,0
+"Rennifer Longwaters","Chief Undergaoler",1,"Longwaters",0,1,NA,0.016722408,1
+"Rickard Thorne","Ser",1,"Thorne",0,1,NA,0.026755853,0
+"Robert Flowers","Ser",1,"Kingsguard",0,1,NA,0.060200669,1
+"Robert Brax","Ser",0,"Brax",0,1,NA,0.046822742,0
+"Robin Hill","Lord Commander of the Night's Watch",1,"Night's Watch",0,1,NA,0.056856187,1
+"Robin Flint","Lord of Flint's Finger",0,"Flint of Widow's Watch",0,1,NA,0.050167224,0
+"Robin Moreland","Lord",1,"Moreland",0,1,NA,0.013377926,1
+"Robin Ryger","Ser",1,"Ryger",0,1,68,0.073578595,1
+"Rodrik Flint","Lord Commander of the Night's Watch",1,"Flint",0,1,NA,0.063545151,1
+"Rodrik Stark","King in the North",1,"Stark",0,1,NA,0.040133779,1
+"Rodrik Ryswell","Rills",1,"Ryswell",0,1,NA,0.040133779,1
+"Roger Hogg","Ser",1,"Hogg",0,1,NA,0.026755853,1
+"Rodwell Stark","Winterfell",1,"Stark",1,1,NA,0.130434783,1
+"Rolland Longthorpe","Longsister",0,"Longthorpe",0,1,NA,0.016722408,1
+"Rolland Uffering","Ser",1,"Uffering",1,1,NA,0.023411371,1
+"Ronald Connington","Knight of Griffin's Roost",1,"Connington",0,1,NA,0.033444816,1
+"Ronald Vance","Ser",1,"Vance of Atranta",0,1,NA,0.026755853,1
+"Royce Coldwater","Coldwater Burn",0,"Coldwater",0,1,NA,0.006688963,1
+"Rufus Leek","Ser",0,"Leek",0,1,NA,0.026755853,1
+"Runcel Hightower","Lord Commander of the Night's Watch",1,"Hightower",0,1,NA,0.053511706,1
+"Rupert Brax","Ser",1,"Brax",0,1,NA,0.040133779,0
+"Rycherd Crane","Ser",0,"Crane",1,1,NA,0.070234114,1
+"Ryam Redwyne","Ser",1,"Redwyne",0,1,NA,0.364548495,0
+"Ryam Florent","Ser",1,"Florent",0,1,NA,0.063545151,1
+"Ryon Allyrion","Ser",1,"Allyrion",1,1,NA,0.053511706,1
+"Saera Targaryen","Princess",1,"Targaryen",0,1,100,0.070234114,0
+"Sarya Whent","Lady",0,"Whent",1,1,NA,0.030100334,1
+"Sawane Botley","Lordsport",1,"Botley",0,1,NA,0.090301003,0
+"Scolera","Septa",0,"Faith of the Seven",0,0,NA,0.016722408,1
+"Sebaston Farman","Fair Isle",1,"Farman",0,1,NA,0.02006689,1
+"Selmond Stackspear","Lord",0,"Stackspear",0,1,NA,0.02006689,1
+"Serala","Duskendale",0,"Darklyn",1,1,NA,0.043478261,1
+"Serwyn of the Mirror Shield","Ser",1,"Kingsguard",0,1,NA,0,1
+"Shella Whent","Harrenhal",0,"Whent",1,1,NA,0.080267559,0
+"Simon Staunton","Ser",1,"Staunton",1,1,NA,0.016722408,1
+"Sigfryd Harlaw","Master of Harlaw Hall",1,"Harlaw of Harlaw Hall",0,1,NA,0.063545151,1
+"Lord Staunton","Rook's Rest",1,"Staunton",0,1,NA,0.016722408,0
+"Steffon Swyft","Ser",1,"Swyft",0,1,NA,0.030100334,1
+"Steffon Darklyn","Ser",0,"Darklyn",0,1,NA,0.093645485,0
+"Steffon Stackspear","Ser",0,"Stackspear",0,1,NA,0.02006689,1
+"Sumner Crakehall","Crakehall",1,"Crakehall",0,1,NA,0.026755853,1
+"Sybell Spicer","Crag",0,"Spicer",1,1,NA,0.086956522,1
+"Symon Santagar","Ser",1,"Santagar",0,1,NA,0.016722408,1
+"Sybelle Glover","Deepwood Motte",0,"Locke",1,1,NA,0.070234114,1
+"Symon Hollard","Ser",1,"Hollard",0,1,NA,0.043478261,1
+"Symond Templeton","Ser",0,"Templeton",0,1,NA,0.030100334,1
+"Tallad","Ser",1,"Baratheon of King's Landing",0,1,NA,0.046822742,1
+"Tanton Fossoway","Ser",0,"Fossoway of Cider Hall",0,1,NA,0.023411371,1
+"Terrence Kenning","Kayce",0,"Kenning of Kayce",0,1,NA,0.016722408,1
+"Theodan Wells","Ser",0,"Wells",0,1,NA,0.016722408,1
+"Terrence Toyne","Ser",1,"Toyne",0,1,NA,0.040133779,0
+"Theodore Tyrell","Ser",1,"Tyrell",1,1,NA,0.137123746,1
+"Theomar Smallwood","Acorn Hall",1,"Smallwood",1,1,NA,0.043478261,1
+"Theomore Harlaw","Lord of the Ten TowersLord Harlaw of HarlawHarlaw of Harlaw",1,"Harlaw",0,1,NA,0.053511706,1
+"Three-Tooth","Ten Towers",0,"Harlaw",0,1,NA,0.010033445,1
+"Titus Peake","Starpike",1,"Peake",1,1,NA,0.02006689,1
+"Tommen Costayne","Three Towers",0,"Costayne",0,1,NA,0.006688963,1
+"Torbert","Septon",1,"Faith of the Seven",0,0,NA,0.016722408,1
+"Torren Liddle","The LiddleLord Liddle",0,"Liddle",0,1,NA,0.02006689,1
+"Trebor Jordayne","Lord of the Tor",0,"Jordayne",0,1,NA,0.016722408,1
+"Tremond Gargalen","Salt Shore",0,"Gargalen",0,1,NA,0.023411371,1
+"Tristan Mudd","Lord Commander of the Night's Watch",1,"Mudd",0,1,NA,0.053511706,1
+"Triston of Tally Hill","Ser",0,"Sunglass",0,1,NA,0.030100334,1
+"Triston Farwynd","Sealskin Point",0,"Farwynd",0,1,NA,0.013377926,1
+"Triston Sunderland","Three Sisters",1,"Sunderland",0,1,NA,0.030100334,1
+"Tybolt Hetherspoon","Ser",1,"Hetherspoon",0,1,NA,0.010033445,1
+"Tybolt Crakehall","Ser",1,"Crakehall",0,1,NA,0.023411371,1
+"Tybolt Lannister","Ser",1,"Lannister",1,1,NA,0.076923077,0
+"Tytos Brax","Ser",1,"Brax",0,1,NA,0.043478261,1
+"Tytos Frey","Ser",1,"Frey",1,1,38,0.063545151,0
+"Tywin Frey","Ser",1,"Frey",0,1,18,0.080267559,1
+"Ulrick Dayne","Ser",1,"Dayne",0,1,NA,0.006688963,1
+"Ulwyck Uller","Ser",1,"Uller",0,1,NA,0.02006689,1
+"Unella","Septa",0,"Faith of the Seven",0,0,NA,0.02006689,1
+"Utherydes Wayn","Steward",0,"Wayn",0,1,68,0.033444816,1
+"Uthor Tollett","Grey Glen",0,"Tollett",0,1,NA,0.010033445,1
+"Vaemond Velaryon","Ser",1,"Velaryon",0,1,NA,0.030100334,0
+"Valaena Velaryon","Dragonstone",0,"Velaryon",1,1,NA,0.080267559,1
+"Vayon Poole","Winterfell",1,"Poole",0,1,NA,0.053511706,0
+"Vickon Greyjoy","Lord Reaper of Pyke",0,"Greyjoy",0,1,NA,0.036789298,0
+"Viserys Plumm","Lord",0,"Plumm",0,1,100,0.093645485,0
+"Vylarr","Captain of the guard",1,"Lannister",0,1,NA,0.040133779,1
+"Vortimer Crane","Ser",0,"Crane",0,1,NA,0.026755853,1
+"Waldon Wynch","Lord of Iron Holt",1,"Wynch",0,1,NA,0.023411371,1
+"Wallace Waynwood","Ser",1,"Waynwood",0,1,NA,0.026755853,1
+"Walgrave","Archmaester",1,"Maesters",0,1,NA,0.043478261,1
+"Walton Stark","King in the North",1,"Stark",0,1,NA,0.010033445,1
+"Warryn Beesbury","Lord of Honeyholt",0,"Beesbury",0,1,NA,0.006688963,1
+"Whalen Frey","Ser",1,"Frey",1,1,38,0.100334448,1
+"Willam Wells","Ser",1,"Wells",0,1,NA,0.040133779,0
+"Willem Darry","Ser",1,"Darry",0,1,NA,0.120401338,0
+"Willam Wythers","Ser",1,"Wythers",0,1,NA,0.010033445,1
+"Willam Stark","Winterfell",1,"Stark",1,1,NA,0.117056856,0
+"William Mooton","Maidenpool",1,"Mooton",0,1,NA,0.043478261,1
+"Wynton Stout","Ser",1,"Stout",0,1,86,0.033444816,1
+"Addam Marbrand","Ser",1,"Marbrand",0,1,NA,0.130434783,1
+"Aegor Rivers","Ser",1,"Bracken",1,1,69,0.210702341,0
+"Aenys Frey","Ser",1,"Frey",1,1,60,0.147157191,0
+"Aerion Targaryen","Prince",1,"Targaryen",1,1,41,0.20735786,0
+"Aemond Targaryen","Protector of the Realm",1,"Targaryen",0,1,20,0.311036789,0
+"Amerei Frey","Lady of Darry",0,"Frey",1,1,23,0.237458194,1
+"Androw Ashford","Ser",1,"Ashford",0,1,NA,0.016722408,1
+"Anders Yronwood","Yronwood",1,"Yronwood",0,1,NA,0.060200669,1
+"Arnolf Karstark","Karhold",1,"Karstark",0,1,NA,0.137123746,1
+"Arya Stark","Princess",0,"Stark",0,1,16,1,1
+"Axell Florent","Ser",1,"Florent",0,1,NA,0.307692308,1
+"Aurane Waters","master of ships",1,"Velaryon",0,1,28,0.377926421,1
+"Ben Plumm","Commander of the Second Sons",1,"Second Sons",0,1,NA,0.140468227,1
+"Boros Blount","Ser",1,"Blount",0,1,NA,0.217391304,1
+"Bran Stark","Prince of Winterfell",1,"Stark",0,1,15,1,1
+"Bronn","Ser",1,"Stokeworth",1,1,41,0.471571906,1
+"Bryce Caron","Nightsong",1,"Caron",0,1,NA,0.066889632,0
+"Clayton Suggs","Ser",1,"Suggs",0,1,NA,0.043478261,1
+"Cersei Lannister","Light of the West",0,"Lannister",1,1,39,1,1
+"Cohollo","Bloodrider",1,"Khal",0,0,NA,0.033444816,0
+"Cortnay Penrose","Ser",1,"Penrose",0,1,NA,0.160535117,0
+"Cotter Pyke","Eastwatch-by-the-Sea",1,"Night's Watch",0,1,NA,0.150501672,1
+"Dagmer","Foamdrinker",1,"Greyjoy",0,1,NA,0.120401338,1
+"Dagos Manwoody","Lord of Kingsgrave",1,"Manwoody",0,1,NA,0.033444816,1
+"Danelle Lothston","Harrenhal",0,"Lothston",0,1,NA,0.016722408,1
+"Doran Martell","Prince of Dorne",1,"Nymeros Martell",1,1,58,0.498327759,1
+"Edric Dayne","Lord of Starfall",1,"Dayne",0,1,18,0.08361204,1
+"Eldon Estermont","Ser",1,"Estermont",1,1,77,0.060200669,1
+"Emmon Frey","Riverrun",1,"Frey of Riverrun",1,1,68,0.230769231,1
+"Galbart Glover","Master of Deepwood Motte",1,"Glover",0,1,NA,0.120401338,1
+"Gerold Hightower","Ser",1,"Hightower",0,1,NA,0.414715719,0
+"Gerris Drinkwater","Ser",1,"Drinkwater",0,1,30,0.157190635,1
+"Harmen Uller","Lord of Hellholt",1,"Uller",0,1,NA,0.043478261,1
+"Gyles Rosby","Master of Coin",1,"Rosby",0,1,NA,0.364548495,0
+"Harras Harlaw","Ser",1,"Harlaw of Grey Garden",0,1,NA,0.107023411,1
+"Harrold Hardyng","Ser",1,"Hardyng",0,1,24,0.120401338,1
+"Helaena Targaryen","Queen",0,"Targaryen",1,1,21,0.27090301,0
+"Harrion Karstark","Karhold",1,"Karstark",0,1,NA,0.096989967,1
+"Hother Umber","Castellan",1,"Umber",0,1,64,0.143812709,1
+"Jalabhar Xho","Red Flower Vale",1,"Summer Islands",0,1,NA,0.073578595,1
+"Janos Slynt","Lord of Harrenhal",1,"Night's Watch",0,1,22,0.56187291,0
+"Jared Frey","Ser",1,"Frey",1,1,52,0.147157191,0
+"Jasper Wylde","Rain House",1,"Wylde",0,1,NA,0.25083612,0
+"Jon Bulwer","Blackcrown",1,"Bulwer",1,1,NA,0.137123746,1
+"Jory Cassel","Captain of the guard",1,"Cassel",0,1,NA,0.170568562,0
+"Jorah Mormont","Ser",1,"Mormont",1,1,51,0.722408027,1
+"Karyl Vance","Ser",1,"Vance of Wayfarer's Rest",0,1,NA,0.117056856,1
+"Kyle Condon","Ser",1,"Condon",0,1,NA,0.040133779,1
+"Lancel Lannister","Ser",1,"Lannister of Casterly Rock",1,1,23,0.47826087,1
+"Lucas Inchfield","Ser",1,"Inchfield",0,1,NA,0.053511706,0
+"Lollys Stokeworth","Stokeworth",0,"Stokeworth",1,1,40,0.127090301,1
+"Lyle Crakehall","Ser",1,"Crakehall",0,1,NA,0.107023411,1
+"Lyn Corbray","Ser",1,"Corbray",0,1,NA,0.090301003,1
+"Mace Tyrell","Highgarden",1,"Tyrell",1,1,49,0.856187291,1
+"Mandon Moore","Ser",1,"Moore",0,1,NA,0.120401338,0
+"Marya Seaworth","Lady",0,"Seaworth",1,1,NA,0.063545151,1
+"Meryn Trant","Ser",1,"Trant",0,1,NA,0.220735786,1
+"Minisa Whent","Riverrun",0,"Whent",1,1,NA,0.043478261,1
+"Mordane","Septa",0,"Stark",0,0,NA,0.10367893,0
+"Myles","Maester",1,"Martell",0,1,NA,0.023411371,1
+"Mors Martell","Sandship",0,"Martell",1,1,NA,0.053511706,1
+"Myrcella Baratheon","Princess",0,"Baratheon of King's Landing",0,1,15,0.56187291,1
+"Nestor Royce","Keeper of the Gates of the Moon",1,"Royce of the Gates of the Moon",0,1,NA,0.086956522,1
+"Nute","Lord of Oakenshield",1,"Greyjoy",0,1,NA,0.050167224,1
+"Nymeria","PrincessQueen",0,"Martell",1,1,NA,0.197324415,1
+"Oberyn Martell","Ser",1,"Martell",0,1,43,0.772575251,0
+"Olenna Redwyne","Highgarden",0,"Redwyne",1,1,77,0.287625418,1
+"Mychel Redfort","Ser",1,"Redfort",1,1,NA,0.070234114,1
+"Osfryd Kettleblack","Ser",1,"Kettleblack",0,1,NA,0.086956522,1
+"Osney Kettleblack","Ser",1,"Kettleblack",0,1,NA,0.123745819,1
+"Orys Baratheon","Storm's End",1,"Baratheon",1,1,NA,0.488294314,0
+"Osmund Kettleblack","Ser",1,"Kettleblack",0,1,NA,0.170568562,1
+"Othell Yarwyck","First Builder",1,"Yarwyck",0,1,NA,0.063545151,1
+"Oswell Whent","Ser",1,"Whent",0,1,NA,0.080267559,0
+"Otto Hightower","Ser",1,"Hightower",0,1,NA,0.371237458,0
+"Paxter Redwyne","Arbor",1,"Redwyne",1,1,NA,0.511705686,1
+"Pearse Caron","Nightsong",1,"Caron",0,1,NA,0.013377926,1
+"Preston Greenfield","Ser",1,"Greenfield",0,1,NA,0.093645485,0
+"Polliver","Castellan of Harrenhal",1,"Clegane",0,1,NA,0.076923077,0
+"Pyat Pree","Warlock",0,"Undying Ones",0,1,NA,0.096989967,1
+"Pycelle","Grand Maester",1,"Lannister",0,1,84,0.638795987,0
+"Quentyn Martell","Ser",1,"Martell",0,1,19,0.551839465,0
+"Ralf Stonehouse","Red Jester",1,"Stonehouse",0,1,NA,0.033444816,1
+"Ramsay Snow","Lord of the Hornwood",1,"Bolton of the Dreadfort",1,1,23,0.461538462,1
+"Randyll Tarly","Horn Hill",1,"Tarly",1,1,NA,0.618729097,1
+"Raymun Fossoway","Ser",1,"Fossoway of New Barrel",0,1,NA,0.040133779,1
+"Raymun Darry","Darry",1,"Darry",0,1,NA,0.076923077,0
+"Ravella Swann","Acorn Hall",0,"Swann",1,1,NA,0.060200669,1
+"Tristifer Botley","Lordsport",1,"Botley",0,1,NA,0.120401338,1
+"Styr","Magnar of Thenn",1,"Thenn",0,1,NA,0.140468227,0
+"Addam Velaryon","Ser",1,"Velaryon",0,1,16,0.107023411,0
+"Aeron Greyjoy","Golden Storm",1,"Greyjoy",0,1,36,0.45819398,1
+"Alannys Harlaw","Iron Islands",0,"Greyjoy",1,1,NA,0.237458194,1
+"Alliser Thorne","Ser",1,"Thorne",0,1,NA,0.230769231,1
+"Alester Florent","Brightwater",1,"Florent",1,1,NA,0.327759197,0
+"Alerie Hightower","Highgarden",0,"Hightower",1,1,48,0.227424749,1
+"Andrik","Lord of Southshield",1,"Drumm",0,1,NA,0.043478261,1
+"Amory Lorch","Ser",1,"Lorch",0,1,NA,0.277591973,0
+"Archibald Yronwood","Ser",1,"Yronwood",0,1,NA,0.140468227,1
+"Areo Hotah","Sunspear",1,"Martell",0,1,48,0.257525084,1
+"Arwyn Oakheart","Old Oak",1,"Oakheart",0,1,NA,0.036789298,1
+"Arthur Dayne","Ser",1,"Dayne",0,1,NA,0.153846154,0
+"Arys Oakheart","Ser",1,"Oakheart",0,1,NA,0.344481605,0
+"Aron Santagar","Ser",1,"Santagar",0,1,NA,0.066889632,0
+"Asha Greyjoy","Black Wind",0,"Greyjoy",1,1,30,0.7090301,1
+"Baelor Blacktyde","Blacktyde",1,"Blacktyde",0,1,NA,0.060200669,0
+"Ballabar","Maester",1,"Redwyne",0,1,NA,0.030100334,1
+"Balon Swann","Ser",1,"Swann",0,1,NA,0.311036789,1
+"Barristan Selmy","Ser",1,"Selmy",0,1,69,1,1
+"Barbrey Dustin","Barrowton",0,"Ryswell",1,1,NA,0.163879599,1
+"Benjen Stark","First Ranger",1,"Stark",0,1,38,0.401337793,1
+"Brandon Norrey","The NorreyLord Norrey",1,"Norrey",0,1,NA,0.030100334,1
+"Bowen Marsh","Lord Steward",1,"Night's Watch",0,1,NA,0.254180602,1
+"Bonifer Hasty","Ser",1,"Hasty",0,1,NA,0.053511706,1
+"Bran the Builder","King of Winter",0,"Stark",0,1,NA,0.090301003,1
+"Brynden Rivers","Ser",1,"Targaryen",0,1,77,0.605351171,0
+"Brynden Tully","Ser",1,"Tully",0,1,63,0.341137124,1
+"Caleotte","Maester",1,"Martell",0,1,NA,0.040133779,1
+"Cassella Vaith","Vaith",0,"Vaith",0,1,NA,0.010033445,1
+"Cellador","Septon",1,"Night's Watch",0,0,NA,0.033444816,1
+"Cletus Yronwood","Ser",1,"Yronwood",0,1,NA,0.070234114,0
+"Colemon","Maester",1,"Arryn",0,1,NA,0.066889632,1
+"Corlys Velaryon","Lord of the Tides",1,"Velaryon",1,1,79,0.525083612,0
+"Criston Cole","Ser",1,"Cole",0,1,48,0.505016722,0
+"Daemon I Blackfyre","Ser",1,"Blackfyre",1,1,26,0,0
+"Daemon Targaryen","Commander of the City Watch",1,"Targaryen",1,1,49,0.668896321,0
+"Daenerys Targaryen","Andals",0,"Targaryen",1,1,21,1,1
+"Daven Lannister","Ser",1,"Lannister",0,1,32,0.20735786,1
+"Davos Seaworth","Ser",1,"Seaworth",1,1,45,0.969899666,1
+"Eddard Stark","Winterfell",1,"Stark",1,1,36,1,0
+"Edmure Tully","Ser",1,"Tully",1,1,38,0.655518395,1
+"Emmon Cuy","Ser",1,"Cuy",0,1,NA,0.036789298,0
+"Falena Stokeworth","Harrenhal",1,"Stokeworth",1,1,100,0.023411371,0
+"Eustace Osgrey","Knight",1,"Osgrey",1,1,NA,0.147157191,1
+"Galazza Galare","Green Grace",0,"Graces",0,1,88,0.090301003,1
+"Garth Hightower","Ser",0,"Hightower",0,1,NA,0.050167224,1
+"Garlan Tyrell","Ser",1,"Tyrell of Brightwater Keep",1,1,28,0.327759197,1
+"Gerold Dayne","Ser",1,"Dayne of High Hermitage",0,1,35,0.107023411,1
+"Godry Farring","Ser",1,"Farring",0,1,NA,0.063545151,1
+"Gorold Goodbrother","Lord of Hammerhorn",1,"Goodbrother",0,1,NA,0.080267559,1
+"Groleo","[1]",0,"Targaryen",0,1,NA,0.110367893,0
+"Gregor Clegane","Ser",1,"Clegane",0,1,35,0.836120401,0
+"Gylbert Farwynd","Lonely Light",1,"Farwynd of the Lonely Light",0,1,NA,0.040133779,1
+"Guyard Morrigen","Ser",1,"Morrigen",0,1,21,0.063545151,0
+"Hallyne","LordWisdom",1,"Alchemists' Guild",0,1,NA,0.086956522,1
+"Harry Strickland","Captain-General",1,"Strickland",0,1,NA,0.076923077,1
+"Harys Swyft","Knight",1,"Swyft",0,1,NA,0.451505017,1
+"High Sparrow","High Septon",1,"Faith of the Seven",0,1,NA,0.16722408,1
+"Howland Reed","Greywater Watch",1,"Reed",1,1,45,0.177257525,1
+"Hugh","Ser",1,"Arryn",0,1,NA,0.063545151,0
+"Hyle Hunt","Ser",0,"Hunt",0,1,NA,0.10367893,1
+"Hoster Tully","Lord Paramount of the Trident",1,"Tully",1,1,62,0.331103679,0
+"Humfrey Hewett","Oakenshield",1,"Hewett",0,1,NA,0.030100334,1
+"Ilyn Payne","Ser",1,"Payne",0,1,NA,0.224080268,1
+"Illyrio Mopatis","Magister",1,"Targaryen",1,1,NA,0.394648829,1
+"Imry Florent","Ser",1,"Florent",0,1,NA,0.183946488,0
+"Jacelyn Bywater","Ser",1,"Bywater",0,1,NA,0.130434783,0
+"Jaime Lannister","Ser",1,"Lannister",0,1,39,1,1
+"Jason Mallister","Seagard",1,"Mallister",0,1,NA,0.127090301,1
+"Jon Arryn","Eyrie",1,"Arryn",1,1,81,0.836120401,0
+"Jon Fossoway","Knight",1,"Fossoway of New Barrel",1,1,NA,0.18729097,1
+"Jonos Bracken","Stone Hedge",1,"Bracken",0,1,NA,0.190635452,1
+"Justin Massey","Ser",1,"Massey",0,1,NA,0.080267559,1
+"Jon Snow","Lord Commander of the Night's Watch",1,"Stark",0,1,22,1,1
+"Kevan Lannister","Ser",1,"Lannister",1,1,56,0.869565217,0
+"Leyton Hightower","Hightower",1,"Hightower",1,1,NA,0.150501672,1
+"Larys Strong","Lord of Harrenhal",1,"Strong",0,1,100,0.297658863,0
+"Lewyn Martell","Ser",1,"Martell",0,1,NA,0.147157191,0
+"Lothar Frey","Twins",1,"Frey",1,1,41,0.173913043,1
+"Lothor Brune","Ser",1,"Brune of Brownhollow",0,1,NA,0.137123746,1
+"Lysa Arryn","Lady of the Vale",0,"Tully",1,1,34,0,0
+"Maege Mormont","Lady of Bear Island",0,"Mormont",0,1,66,0.137123746,1
+"Mark Mullendore","Ser",1,"Mullendore",0,1,NA,0.050167224,1
+"Mark Ryswell","Ser",0,"Ryswell",0,1,NA,0.02006689,0
+"Marlon Manderly","Ser",1,"Manderly",0,1,NA,0.043478261,1
+"Marq Piper","Ser",1,"Piper",0,1,NA,0.140468227,1
+"Mathis Rowan","Goldengrove",1,"Rowan",1,1,NA,0.364548495,1
+"Meribald","Septon",1,"Faith of the Seven",0,0,58,0.10367893,1
+"Morros Slynt","Lord",1,"Slynt",0,1,NA,0.043478261,1
+"Ulf the White","Ser",1,"Blacks",0,1,NA,0.060200669,0
+"Roose Bolton","Dreadfort",1,"Bolton",1,1,45,0.97993311,1
+"Shireen Baratheon","Princess",0,"Baratheon of Dragonstone",0,1,16,0.230769231,1
+"Renly Baratheon","Lord Paramount of the Stormlands",1,"Baratheon",1,1,22,1,0
+"Theon Greyjoy","green lands",1,"Greyjoy",0,1,27,1,1
+"Robyn Rhysling","Ser",1,"Rhysling",0,1,NA,0.023411371,1
+"Rodrik Harlaw","Harlaw",1,"Harlaw",0,1,NA,0.160535117,1
+"Wendamyr","Maester",1,"Greyjoy",0,1,NA,0.02006689,1
+"Robin Potter","Ser",1,"Potter",0,1,NA,0.02006689,1
+"Richard Horpe","Ser",1,"Horpe",0,1,NA,0.063545151,1
+"Sansa Stark","Princess",0,"Stark",1,1,19,1,1
+"Vargo Hoat","Lord of Harrenhal",1,"Brave Companions",0,1,NA,0.210702341,0
+"Robert Arryn","Eyrie",1,"Arryn",0,1,13,0.321070234,1
+"Rakharo","Bloodrider",1,"Targaryen",0,0,NA,0.183946488,1
+"Rhaella Targaryen","PrincessQueenDowager Queen",1,"Targaryen",1,1,39,0.321070234,0
+"Tywin Lannister","Casterly Rock",1,"Lannister",1,1,58,1,0
+"Wyman Manderly","Lord of White Harbor",1,"Manderly",0,1,66,0.35451505,1
+"Wylis Manderly","Ser",1,"Manderly",0,1,53,0.157190635,1
+"Wendel Manderly","Ser",1,"Manderly",0,1,45,0.133779264,0
+"Steffon Baratheon","Storm's End",1,"Baratheon",1,1,32,0.371237458,0
+"Rickard Karstark","Karhold",1,"Karstark",0,1,NA,0.230769231,0
+"Reznak mo Reznak","Seneschal",1,"of Reznak",0,1,NA,0.080267559,1
+"Ronnet Connington","Ser",1,"Connington",0,1,31,0.113712375,1
+"Tytos Blackwood","Raventree Hall",1,"Blackwood",0,1,NA,0.220735786,1
+"Rodrik Cassel","Ser",1,"Cassel",0,1,NA,0.397993311,0
+"Stevron Frey","Ser",1,"Frey",1,1,66,0.173913043,0
+"Jon Connington","Lord of Griffin's Roost",1,"Connington",0,1,42,0.719063545,1
+"Rickard Stark","Winterfell",1,"Stark",1,1,52,0.27090301,0
+"Visenya Targaryen","QueenDowager Queen",0,"Targaryen",1,1,72,0.277591973,0
+"Petyr Baelish","Master of coin",1,"Baelish",1,1,37,1,1
+"Viserys Targaryen","Lord of the Seven Kingdoms",1,"Targaryen",0,1,22,0.622073579,0
+"Salladhor Saan","Prince of the Narrow Sea",1,"Baratheon of Dragonstone",0,1,NA,0.18729097,1
+"Victarion Greyjoy","Lord Captain of the Iron Fleet",1,"Greyjoy",0,1,37,0.705685619,1
+"Tyrion Lannister","Hand of the King",1,"Lannister",1,1,32,1,1
+"Trystane Martell","Prince",1,"Martell",0,1,18,0.150501672,1
+"Rolland Storm","Ser",1,"Caron",0,1,NA,0.070234114,1
+"Willam Dustin","Barrowton",1,"Dustin",1,1,NA,0.063545151,0
+"Tyland Lannister","Ser",1,"Lannister",0,1,NA,0.35451505,0
+"Thoren Smallwood","First Ranger",1,"Night's Watch",0,1,NA,0.086956522,0
+"Rolph Spicer","Ser",0,"Spicer",0,1,NA,0.060200669,1
+"Selyse Florent","LadyQueen",0,"Florent",1,1,NA,0.397993311,1
+"Damion Lannister","SerCastellan of Casterly Rock",1,"Lannister",1,1,NA,0.08361204,1
+"Lyonel Baratheon","Ser",1,"Baratheon",0,1,NA,0.056856187,0
+"Vardis Egen","Ser",1,"Egen",0,1,49,0.090301003,0
+"Orton Merryweather","Longtable",1,"Merryweather",1,1,NA,0.37458194,1
+"Jeor Mormont","Bear Island",1,"Mormont",0,1,69,0.618729097,0
+"Samwell Stone","Ser",1,"Royce",0,1,NA,0.013377926,1
+"Mors Umber","Castellan",1,"Umber",0,1,70,0.147157191,1
+"Parmen Crane","Ser",1,"Crane",0,1,NA,0.040133779,1
+"Qyburn","Master of whisperers",1,"Lannister",0,1,NA,0.535117057,1
+"Rickon Stark","Prince of WinterfellHeir to Winterfell",1,"Stark",0,1,10,0.551839465,1
+"Robar Royce","Ser",1,"Royce",0,1,22,0.096989967,0
+"Rhae Targaryen","Princess",0,"Targaryen",0,1,100,0.080267559,0
+"Ryman Frey","Ser",1,"Frey",0,1,54,0.217391304,0
+"Rolly Duckfield","Ser",1,"Targaryen",0,1,NA,0.086956522,1
+"Rhaelle Targaryen","Princess",0,"Targaryen",1,1,76,0.137123746,1
+"Shyra Errol","Haystack Hall",0,"Errol",0,1,NA,0.013377926,1
+"Maelor Targaryen","Prince",1,"Targaryen",0,1,3,0.180602007,0
+"Arianne Martell","Princess",0,"Martell",0,1,29,0.571906355,1
+"Baela Targaryen","Lady",0,"Targaryen",1,1,100,0.127090301,0
+"Dunstan Drumm","Old Wyk",1,"Drumm",0,1,93,0.076923077,1
+"Daemon Sand","Ser",1,"Allyrion",0,1,NA,0.073578595,1
+"Joyeuse Erenford","the Crossing",1,"Erenford",1,1,23,0.043478261,1
+"Rossart","Hand of the King",1,"Alchemists' Guild",0,1,NA,0.367892977,0
+"Waymar Royce","Ser",1,"Royce",0,1,19,0.123745819,0
+"Daemon II Blackfyre","Andals",1,"Blackfyre",0,1,23,0.227424749,0
+"Hugh Hammer","Ser",1,"Blacks",0,1,NA,0.076923077,0
+"Tygett Lannister","Ser",1,"Lannister",1,1,55,0.110367893,1
+"Rhaegar Targaryen","Prince of Dragonstone",1,"Targaryen",1,1,24,0.799331104,0
+"Bethany Bolton","the Dreadfort",1,"Bolton",1,1,NA,0.043478261,1
+"Desmond Grell","Ser",0,"Grell",0,1,68,0.076923077,1
+"Gendry","Ser",1,"brotherhood without banners",0,1,21,0.43812709,1
+"Loras Tyrell","Ser",1,"Tyrell",0,1,23,0.665551839,1
+"Ricasso","Sunspear",0,"Martell",0,1,NA,0.070234114,1
+"Yohn Royce","Runestone",1,"Royce",0,1,NA,0.170568562,1
+"Rohanne Webber","Coldmoat",0,"Webber",1,1,100,0.170568562,0
+"Walder Rivers","Ser",1,"Frey",1,1,NA,0.080267559,1
+"Moqorro","Slave of R'hllor",1,"R'hllor",0,1,NA,0.123745819,1
+"Tytos Lannister","Casterly Rock",1,"Lannister",1,1,47,0.210702341,0
+=======
 "name","title","male","house","isMarried","isNoble","age","popularity","isAlive","gender"
 "Walder Frey","Lord of the Crossing",1,"Frey",1,1,97,0.89632107,1,"men"
 "Addison Hill","Ser",1,"Swyft",0,1,NA,0.267558528,1,"men"

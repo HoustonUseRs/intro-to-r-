@@ -1,6 +1,5 @@
 # Interacting with Simple Data
 
-
 ## 2.1 Coding in the console
 
 Click in the interactive console.  You'll notice a cursor will start blinking next to the `>` symbol.  This is called the command prompt; the computer is waiting for us to give it a command; it's "prompting" us, and letting us know it's ready.
@@ -52,17 +51,33 @@ This is neat and all, but we're here to dig into data, so let's get to it!
 
 ## Loading in data
 
-We are going to load in CSV files today to get data into R.  R is powerful for statistics because it has a great base collection of functions, or named procedures, for common things we'd want to do with data, like reading in a CSV.  R's base way of doing this is with a function named `read.csv`. Like the named variables, we can get **what** `read.csv` is by referring to its name. For more info on loading data, [see here](https://www.datacamp.com/community/tutorials/importing-data-r-part-two).
+We are going to load in CSV files today to get data into R.  
+R is powerful for statistics because it has a great base
+collection of functions, or named procedures, for common
+things we'd want to do with data, like reading in a CSV.
+R's base way of doing this is with a function named
+`read.csv`. Like the named variables, we can get **what**
+`read.csv` is by referring to its name.
+For more info on loading data, [see here](https://www.datacamp.com/community/tutorials/importing-data-r-part-two).
 
 ```{r}
 read.csv
 ```
-
 Here, we get back just what `read.csv` is.  In order to tell R to **do** or **run** the function, we need to run:
 
 ```{r error=TRUE}
 read.csv()
 ```
+
+RStudio reminds us what different functions are named as we start typing them into console, and reminds us what additional information each of those functions may need when we type the `(`.  It also automatically completes the function call for us with the `)`.
+
+?function....
+A function is a set of statements organized to perform a specific task. R has a large number of in-built functions and the user can create their own functions.
+The basic components are: function name, arguments, body,
+return value...
+
+`function_name <- function(arg_1, arg_2, ...) {
+   Function body }`
 
 To learn more about any function, we can add a `?` in front of the function name like this:
 
@@ -76,8 +91,6 @@ In order to know what file to read in, we need to give the function the location
 read.csv(file = '../data/got.csv')
 ```
 
-RStudio reminds us what different functions are named as we start typing them into console, and reminds us what additional information each of those functions may need when we type the `(`.  It also automatically completes the function call for us with the `)`.
-
 When we read in the CSV, R printed the data out to us.  In order to really use the data though, we need to tell R to remember the data by assigning it to a variable.  We want to name our variables so that they're easy to remember and indicative of what information they are holding onto.
 
 ```{r}
@@ -90,7 +103,7 @@ Now, when we ask R about `got`, we get the data back!
 got
 ```
 
-There are many other ways to load in data from other file types.  Googling "read xls to R" will give us some great answers on how to read in data as an Excel sheet.  We also have a quick list of standard ways to load other common file types in the appendix.
+There are many other ways to load in data from other file types.  Googling "read xls to R" will give us some great answers on how to read in data as an Excel sheet.
 
 Let's get a quick sense of what this data is like!
 
@@ -103,8 +116,7 @@ str(got)
 
 # Data structures
 
-The most important data structures in base R can be organized by their
-dimensionality and whether their contents are of the same type (homogeneous).
+The most important data structures in base R can be organized by their dimensionality and whether their contents are of the same type (homogeneous).
 
 | Dimensionality | Homogeneous   | Heterogeneous   |
 | :------------- | :-------------| :---------------|
@@ -119,6 +131,7 @@ They have three common properties:
 - Type, `typeof()`, what it is.
 - Length, `length()`, how many elements it contains.
 - Attributes, `attributes()`, additional arbitrary metadata.
+
 They differ in the types of their elements: all elements of an atomic vector
  must be the same type, whereas the elements of a list can have different types.
 
@@ -162,7 +175,7 @@ class(x)
 levels(x)
 ```
 Unfortunately, most data loading functions in R automatically convert character vectors to factors.
-Instead, use the argument stringsAsFactors = FALSE to suppress this behaviour, and then manually convert character vectors to factors when need it.
+Instead, use the argument stringsAsFactors = FALSE to suppress this behavior, and then manually convert character vectors to factors when need it.
 
 ```{r}
 got <- read.csv(file = '../data/got.csv', stringsAsFactors = FALSE)
@@ -170,7 +183,7 @@ got <- read.csv(file = '../data/got.csv', stringsAsFactors = FALSE)
 ### Matrices and arrays
 Adding a dim attribute to an atomic vector allows it to behave like a multi-dimensional array.
  A special case of the array is the matrix, which has two dimensions.
-`length()` and `names()` have high-dimensional generalisations:
+`length()` and `names()` have high-dimensional generalizations:
 - length() generalises to `nrow()` and `ncol()` for matrices, and `dim()` for arrays.
 - names() generalises to `rownames()` and `colnames()` for matrices, and `dimnames()`,
 a list of character vectors, for arrays.
@@ -343,12 +356,12 @@ Additionally, with the argument horizontal = TRUE we can plot it horizontally
  and with notch = TRUE we can add a notch to the box.
  ```{r}
  boxplot(got$popularity,
- +         main = "Popularity of GOT characters",
- +         xlab = "0-1",
- +         ylab = "Popularity",
- +         col = "orange",
- +         border = "brown",
- +         horizontal = TRUE)
+         main = "Popularity of GOT characters",
+         xlab = "0-1",
+         ylab = "Popularity",
+         col = "orange",
+         border = "brown",
+         horizontal = TRUE)
  ```
 
 Let's see who is more popular, men or women...
@@ -356,25 +369,64 @@ Let's see who is more popular, men or women...
 # adding more comprehensive names
 got <- got %>% mutate(gender = ifelse(male == 1, "men", "women"))
 boxplot(popularity ~ gender, data=got,
-+         main = "Popularity of GOT characters by gender",
-+         xlab = "Popularity",
-+         ylab = "Gender",
-+         col = c("blue", "pink"),
-+         horizontal = TRUE)
+        main = "Popularity of GOT characters by gender",
+        xlab = "Popularity",
+        ylab = "Gender",
+        col = c("blue", "pink"),
+        horizontal = TRUE)
 ```
 
 ```{r}
 gotFiltered <- got %>% filter(house %in% c("Lannister", "Stark", "Targaryen"))
 boxplot(popularity ~ house, data=gotFiltered,
-+         main = "Popularity of GOT characters by house",
-+         xlab = "Popularity",
-+         ylab = "House",
-+         col = c("blue", "pink", "magenta"))
+        main = "Popularity of GOT characters by house",
+        xlab = "Popularity",
+        ylab = "House",
+        col = c("blue", "pink", "magenta"))
 ```
 Being bad apparently makes you popular...
 
-If you think this is kind of cool, wait to see all you can do using ggplot2,
- which has become the standard way to plot data in R.
+How about checking for a relationship between
+age and popularity... Let's try it out using a very basic linear model.
+
+## Modeling the data
+
+Let's check on a potential correlation between age and popularity. If we were ever wondering if our favorite got character will be super popular in the `wiki of ice and fire` page, we might want to know if we can use the age to calculate this.
+
+First, we might only want to consider data without missing data (remember age has some NA's)
+
+```{r}
+gotFiltered <- got %>% filter(!is.na(age)) %>% select(age, popularity)
+
+```
+We can now calculate the linear model for popularity vs. age using R's `lm` function:
+
+```{r}
+lm(popularity ~ age, data = gotFiltered)
+```
+
+There's actually more information that `lm` tells us.  Let's take a look by first telling the computer to remember the result as a variable called `got_lm`.
+
+```{r}
+got_lm <- lm(popularity ~ age, data = gotFiltered)
+summary(got_lm)
+```
+
+We can visualize this using base R
+```{r}
+plot(popularity ~ age, gotFiltered)
+abline(got_lm)
+```
+
+We will not focus on base R for data visualizatoions, you could do so much more with ggplot2. This a glimpse of that!
+```{r}
+library(ggplot2)
+gotFiltered %>%  ggplot(aes(x = age, y = popularity)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+Even though our lm was quite disappointing, we can see that ggplot2's graph looks way better than the one from base R. Wait to see all you can do using ggplot2, which has become the standard way to plot data in R.
 
 ## Working with a simple dataset
 
@@ -416,6 +468,18 @@ __Calculated descriptive statistics on the data__
 | `min()`               | Minimum                |
 
 __Visualizing the data using base R__
+
+| Code                                                 |
+| :--------------------------------------------------- |
+|boxplot(popularity ~ house, data=gotFiltered)         |
+|plot(popularity ~ age, gotFiltered)         |
+
+__Modeling the data__
+
+| Code                                                 |
+| :--------------------------------------------------- |
+|got_lm <- lm(popularity ~ age, data = gotFiltered)    |
+
 
 
 got is a rather well-formed dataset. Let's practice our new skills on a
